@@ -1,12 +1,21 @@
 // sim entry point
+#include "screen.h"
+#include "simulation_params.h"
+#include "manifest.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
 #include <cstdio>
+#include <vector>
 
-// Declared in main_screen.cpp
-bool render_main_screen(GLFWwindow* window);
+Screen render_title_screen(GLFWwindow* window);
+Screen render_menu_screen(GLFWwindow* window);
+Screen render_research_screen(GLFWwindow* window);
+Screen render_under_the_hood_screen(GLFWwindow* window);
+Screen render_simulation_screen(GLFWwindow* window,
+                                 const std::vector<SimulationParams>& available_events,
+                                 SimulationParams& selected);
 
 int main() {
     if (!glfwInit()) {
@@ -33,16 +42,25 @@ int main() {
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330");
 
+    Screen current = Screen::Title;
+    SimulationParams selected_event;
+    std::vector<SimulationParams> available_events =
+        load_trajectory_manifest("data/trajectories/index.csv");
+
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
 
-        bool begin = render_main_screen(window);
+        switch (current) {
+            case Screen::Title:      current = render_title_screen(window);      break;
+            case Screen::Menu:       current = render_menu_screen(window);       break;
+            case Screen::Research:   current = render_research_screen(window);   break;
+            case Screen::UnderTheHood: current = render_under_the_hood_screen(window); break;
+            case Screen::Simulation:
+                current = render_simulation_screen(window, available_events, selected_event);
+                break;
+        }
 
         glfwSwapBuffers(window);
-
-        if (begin) {
-            // TODO: transition to next screen
-        }
     }
 
     ImGui_ImplOpenGL3_Shutdown();

@@ -1,0 +1,9 @@
+build/
+imgui.ini
+
+.venv/
+__pycache__/
+*.pyc
+
+data/
+models/**/*.fits
