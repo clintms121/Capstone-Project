@@ -36,10 +36,12 @@ set(IMGUI_SOURCES
 # --- Executable ---
 add_executable(capstone
     graphics/main.cpp
+    graphics/fonts.cpp
     graphics/main_screen.cpp
     graphics/menu_screen.cpp
     graphics/research_screen.cpp
     graphics/under_the_hood_screen.cpp
+    graphics/spacetime_simulation_screen.cpp
     graphics/simulation_screen.cpp
     graphics/manifest.cpp
     ${IMGUI_SOURCES}

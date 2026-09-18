@@ -5,5 +5,6 @@ enum class Screen {
     Menu,
     Research,
     UnderTheHood,
+    SpacetimeSimulation,
     Simulation,
 };

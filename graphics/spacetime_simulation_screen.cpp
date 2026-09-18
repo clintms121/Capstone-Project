@@ -4,9 +4,11 @@
 #include "imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
 
-// Renders the post-Begin menu: choose between reading about the research
-// or jumping into the merger simulation.
-Screen render_menu_screen(GLFWwindow* window) {
+// Placeholder for a spacetime-curvature visualization -- e.g. a warped grid
+// showing how mass curves space and how a passing gravitational wave
+// stretches/squeezes it, illustrating the "How the Data is Collected"
+// section of the Under the Hood screen that links here.
+Screen render_spacetime_simulation_screen(GLFWwindow* window) {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
@@ -26,7 +28,7 @@ Screen render_menu_screen(GLFWwindow* window) {
         ImGuiWindowFlags_NoScrollbar |
         ImGuiWindowFlags_NoSavedSettings;
 
-    Screen next = Screen::Menu;
+    Screen next = Screen::SpacetimeSimulation;
 
     ImGui::PushStyleColor(ImGuiCol_WindowBg,        ImVec4(0, 0, 0, 0));
     ImGui::PushStyleColor(ImGuiCol_Text,            ImVec4(1, 1, 1, 1));
@@ -34,33 +36,18 @@ Screen render_menu_screen(GLFWwindow* window) {
     ImGui::PushStyleColor(ImGuiCol_ButtonHovered,   ImVec4(0.28f, 0.28f, 0.28f, 1));
     ImGui::PushStyleColor(ImGuiCol_ButtonActive,    ImVec4(0.38f, 0.38f, 0.38f, 1));
 
-    ImGui::Begin("##menu", nullptr, flags);
+    ImGui::Begin("##spacetime_simulation", nullptr, flags);
 
-    const char* heading = "Gravitational Wave Classification & Merger Visualization";
-    float heading_w = ImGui::CalcTextSize(heading).x;
-    ImGui::SetCursorPos(ImVec2((screen_w - heading_w) * 0.5f, screen_h * 0.35f));
-    ImGui::Text("%s", heading);
+    const char* msg = "Spacetime simulation not implemented yet.";
+    float msg_w = ImGui::CalcTextSize(msg).x;
+    ImGui::SetCursorPos(ImVec2((screen_w - msg_w) * 0.5f, screen_h * 0.45f));
+    ImGui::Text("%s", msg);
 
-    float btn_w = 200.0f;
-    float btn_h = 32.0f;
-    float gap = 20.0f;
-    float total_w = btn_w * 2 + gap;
-    float start_x = (screen_w - total_w) * 0.5f;
-    float btn_y = screen_h * 0.35f + 50.0f;
-
-    ImGui::SetCursorPos(ImVec2(start_x, btn_y));
-    if (ImGui::Button("View Research", ImVec2(btn_w, btn_h)))
-        next = Screen::Research;
-
-    ImGui::SetCursorPos(ImVec2(start_x + btn_w + gap, btn_y));
-    if (ImGui::Button("Start Simulation", ImVec2(btn_w, btn_h)))
-        next = Screen::Simulation;
-
-    float back_w = 180.0f;
-    float back_h = 28.0f;
-    ImGui::SetCursorPos(ImVec2(40.0f, screen_h - back_h - 40.0f));
-    if (ImGui::Button("Return to Title Page", ImVec2(back_w, back_h)))
-        next = Screen::Title;
+    float btn_w = 90.0f;
+    float btn_h = 28.0f;
+    ImGui::SetCursorPos(ImVec2(40.0f, screen_h - btn_h - 40.0f));
+    if (ImGui::Button("Back", ImVec2(btn_w, btn_h)))
+        next = Screen::UnderTheHood;
 
     ImGui::End();
     ImGui::PopStyleColor(5);

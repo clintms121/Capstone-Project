@@ -4,7 +4,6 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
-#include <cstdio>
 #include <vector>
 
 // Renders the simulation screen. With no event selected yet, this is a
@@ -60,13 +59,41 @@ Screen render_simulation_screen(GLFWwindow* window,
         } else {
             ImGui::SetCursorPos(ImVec2(40.0f, 80.0f));
             ImGui::BeginChild("##event_list", ImVec2(screen_w - 80.0f, screen_h - 200.0f), true);
-            for (const auto& ev : available_events) {
-                char label[256];
-                snprintf(label, sizeof(label), "%s   (chirp mass %.1f Msun, q=%.2f)",
-                         ev.event_id.c_str(), ev.chirp_mass_msun, ev.mass_ratio);
-                if (ImGui::Button(label, ImVec2(-1, 0)))
+
+            const float card_w = 280.0f;
+            const float card_h = 160.0f;
+            const float gap = 20.0f;
+            float region_w = ImGui::GetContentRegionAvail().x;
+            int cards_per_row = (int)((region_w + gap) / (card_w + gap));
+            if (cards_per_row < 1)
+                cards_per_row = 1;
+
+            for (int i = 0; i < (int)available_events.size(); ++i) {
+                const SimulationParams& ev = available_events[i];
+
+                if (i % cards_per_row != 0)
+                    ImGui::SameLine(0.0f, gap);
+
+                ImGui::PushID(i);
+                ImGui::BeginChild("##card", ImVec2(card_w, card_h), true);
+
+                ImGui::SetWindowFontScale(1.5f);
+                ImGui::TextUnformatted(ev.event_id.c_str());
+                ImGui::SetWindowFontScale(1.0f);
+
+                ImGui::Dummy(ImVec2(0.0f, 10.0f));
+                ImGui::TextWrapped("Chirp mass: %.1f Msun", ev.chirp_mass_msun);
+                ImGui::TextWrapped("Mass ratio: %.2f", ev.mass_ratio);
+
+                ImGui::EndChild();
+
+                bool card_clicked = ImGui::IsItemHovered() && ImGui::IsMouseClicked(ImGuiMouseButton_Left);
+                ImGui::PopID();
+
+                if (card_clicked)
                     selected = ev;
             }
+
             ImGui::EndChild();
         }
     } else {
