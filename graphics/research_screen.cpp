@@ -73,15 +73,17 @@ Screen render_research_screen(GLFWwindow* window) {
     ImGui::SetCursorPos(ImVec2(40.0f, 40.0f));
     ImGui::TextWrapped(
         "Gravitational Wave Classification + Merger Visualization\n\n"
-        "1. Classifier: LIGO open strain data (GWOSC) + the Gravity Spy glitch "
-        "dataset are turned into Q-transform spectrograms and used to train a "
-        "CNN that separates real compact-binary signals from ~20 classes of "
-        "detector glitches.\n\n"
-        "2. Parameter estimation: chirp mass and mass ratio are estimated from "
-        "the identified signal's time-frequency track.\n\n"
-        "3. Visualization: the estimated masses drive a post-Newtonian inspiral "
-        "trajectory and a damped-sinusoid ringdown, animated in 3D in the "
-        "Simulation screen."
+        "1. Classifier: LIGO open strain data around 192 confirmed mergers (GWOSC) "
+        "and 8,583 labeled Gravity Spy glitches are turned into Q-scan images. A "
+        "CNN sorts each image into a real-signal class or one of 21 glitch and "
+        "noise classes (97.9% accuracy on images it never trained on).\n\n"
+        "2. Mass estimation: for real signals, matched filtering against about "
+        "3,000 predicted post-Newtonian chirps measures the chirp mass -- within "
+        "2.2% of LIGO's published value (median) when the signal is clear enough.\n\n"
+        "3. Visualization (in progress): the measured masses drive a post-Newtonian "
+        "inspiral and a quasinormal-mode ringdown, to be animated in 3D on the "
+        "Simulation screen.\n\n"
+        "Try steps 1 and 2 on real data in the Classifier Demo from the main menu."
     );
 
     float btn_w = 220.0f;

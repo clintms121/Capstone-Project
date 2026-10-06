@@ -6,12 +6,12 @@
 #include <GLFW/glfw3.h>
 #include <vector>
 
-// Renders the simulation screen. With no event selected yet, this is a
-// picker over `available_events` (the parsed data/trajectories/index.csv
-// manifest written by the Python pipeline). Once one is picked, `selected`
-// holds the parameters (event id, chirp mass, mass ratio, trajectory path)
-// that the eventual playback code needs -- see physics/README.md for the
-// trajectory file contract.
+// Renders the simulation screen -- the project's final, still in-progress
+// part. With no event selected yet, this is a picker over `available_events`
+// (the parsed data/trajectories/index.csv manifest written by the Python
+// pipeline). Once one is picked, `selected` holds the parameters (event id,
+// chirp mass, mass ratio, trajectory path) that the eventual playback code
+// needs -- see physics/README.md for the trajectory file contract.
 Screen render_simulation_screen(GLFWwindow* window,
                                  const std::vector<SimulationParams>& available_events,
                                  SimulationParams& selected) {
@@ -44,21 +44,33 @@ Screen render_simulation_screen(GLFWwindow* window,
 
     ImGui::Begin("##simulation", nullptr, flags);
 
+    // --- In-progress banner ---
+    ImGui::SetCursorPos(ImVec2(40.0f, 24.0f));
+    ImGui::TextColored(ImVec4(1.0f, 0.70f, 0.30f, 1.0f), "MERGER SIMULATION -- IN PROGRESS");
+    ImGui::SetCursorPos(ImVec2(40.0f, 44.0f));
+    ImGui::PushTextWrapPos(screen_w - 40.0f);
+    ImGui::TextColored(ImVec4(0.62f, 0.62f, 0.66f, 1.0f),
+        "This is the final part of the project and is still being built. The physics is done: "
+        "each merger below already has its orbit, merger and ringdown computed from the chirp "
+        "mass the tool measured (physics/build_trajectories.py). The 3D playback of those "
+        "trajectories is what's coming next.");
+    ImGui::PopTextWrapPos();
+
     if (!selected.is_selected()) {
         // --- Event picker ---
-        ImGui::SetCursorPos(ImVec2(40.0f, 40.0f));
-        ImGui::Text("Choose a classified event to visualize");
+        ImGui::SetCursorPos(ImVec2(40.0f, 100.0f));
+        ImGui::Text("Mergers the tool classified as real and could weigh (%d)", (int)available_events.size());
 
         if (available_events.empty()) {
-            ImGui::SetCursorPos(ImVec2(40.0f, 80.0f));
+            ImGui::SetCursorPos(ImVec2(40.0f, 130.0f));
             ImGui::TextWrapped(
                 "No events available yet. The ml/ + physics/ pipeline hasn't "
-                "produced data/trajectories/index.csv -- run the classifier "
-                "and mass_estimation steps on a real event first."
+                "produced data/trajectories/index.csv -- see ml/README.md for "
+                "the steps to run."
             );
         } else {
-            ImGui::SetCursorPos(ImVec2(40.0f, 80.0f));
-            ImGui::BeginChild("##event_list", ImVec2(screen_w - 80.0f, screen_h - 200.0f), true);
+            ImGui::SetCursorPos(ImVec2(40.0f, 130.0f));
+            ImGui::BeginChild("##event_list", ImVec2(screen_w - 80.0f, screen_h - 240.0f), true);
 
             const float card_w = 280.0f;
             const float card_h = 160.0f;
@@ -82,8 +94,8 @@ Screen render_simulation_screen(GLFWwindow* window,
                 ImGui::SetWindowFontScale(1.0f);
 
                 ImGui::Dummy(ImVec2(0.0f, 10.0f));
-                ImGui::TextWrapped("Chirp mass: %.1f Msun", ev.chirp_mass_msun);
-                ImGui::TextWrapped("Mass ratio: %.2f", ev.mass_ratio);
+                ImGui::TextWrapped("Chirp mass: %.1f Msun (measured)", ev.chirp_mass_msun);
+                ImGui::TextWrapped("Mass ratio: %.2f (typical value)", ev.mass_ratio);
 
                 ImGui::EndChild();
 
@@ -98,18 +110,22 @@ Screen render_simulation_screen(GLFWwindow* window,
         }
     } else {
         // --- Selected event (playback not implemented yet) ---
-        ImGui::SetCursorPos(ImVec2(40.0f, 40.0f));
+        ImGui::SetCursorPos(ImVec2(40.0f, 110.0f));
         ImGui::Text("Event: %s", selected.event_id.c_str());
 
-        ImGui::SetCursorPos(ImVec2(40.0f, 70.0f));
-        ImGui::Text("Chirp mass: %.2f Msun   Mass ratio: %.2f",
+        ImGui::SetCursorPos(ImVec2(40.0f, 140.0f));
+        ImGui::Text("Chirp mass: %.2f Msun (measured)   Mass ratio: %.2f (typical value)",
                     selected.chirp_mass_msun, selected.mass_ratio);
 
-        ImGui::SetCursorPos(ImVec2(40.0f, 100.0f));
-        ImGui::TextWrapped("Trajectory file: %s", selected.trajectory_path.c_str());
+        ImGui::SetCursorPos(ImVec2(40.0f, 170.0f));
+        ImGui::TextWrapped("Computed trajectory: %s", selected.trajectory_path.c_str());
 
-        ImGui::SetCursorPos(ImVec2(40.0f, 140.0f));
-        ImGui::TextDisabled("Playback not implemented yet.");
+        ImGui::SetCursorPos(ImVec2(40.0f, 210.0f));
+        ImGui::TextDisabled("3D playback of this merger is in progress.");
+
+        ImGui::SetCursorPos(ImVec2(40.0f, 240.0f));
+        if (ImGui::Button("Choose another event", ImVec2(180.0f, 28.0f)))
+            selected = SimulationParams{};
     }
 
     float btn_w = 90.0f;

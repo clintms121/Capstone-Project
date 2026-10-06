@@ -16,9 +16,8 @@ namespace
 
 } // namespace
 
-// Technical breakdown of the ML pipeline. Keep this in sync with the actual
-// implementation in ml/ as it's built out -- it's currently describing the
-// intended design (see ml/README.md), not a trained model.
+// Plain-language breakdown of the ML pipeline. Keep this in sync with the
+// actual implementation and results in ml/README.md.
 Screen render_under_the_hood_screen(GLFWwindow *window)
 {
     ImGui_ImplOpenGL3_NewFrame();
@@ -67,7 +66,7 @@ Screen render_under_the_hood_screen(GLFWwindow *window)
         "basically a sensor reading of how much the detector's arms stretched "
         "and squeezed over a few seconds around a possible event. That raw "
         "signal looks like pure noise to the eye, so it gets cleaned up and "
-        "turned into a 128x128 image: one axis is time, the other is "
+        "turned into a 140x170 image: one axis is time, the other is "
         "frequency, and brightness shows signal strength. That image is what "
         "the model actually looks at.");
 
@@ -89,6 +88,38 @@ Screen render_under_the_hood_screen(GLFWwindow *window)
     if (ImGui::Button("Space Time Simulation", ImVec2(220.0f, 32.0f)))
         next = Screen::SpacetimeSimulation;
     ImGui::Dummy(ImVec2(0.0f, 14.0f));
+
+    section(
+        "How the Classifier Decides",
+        "The images go to a convolutional neural network (CNN), a model built "
+        "for pictures. Its first layers learn simple features like edges and "
+        "bright spots; later layers combine them into shapes like \"a streak "
+        "that curves upward\" -- the chirp a merger makes as the two black "
+        "holes spiral in faster and faster. It sorts every image into one of "
+        "22 labels: a real signal, or one of 21 kinds of glitch or noise "
+        "labeled by Gravity Spy volunteers. On images it never saw in "
+        "training it gets 97.9% right.");
+
+    section(
+        "Making Sure It Isn't Cheating",
+        "The first version scored a perfect test -- and also called every "
+        "image of pure noise a real signal. Every image our code produced had "
+        "been a merger, so it had learned to recognize our code, not the "
+        "chirp. Adding noise images made the same way fixed that. The real "
+        "test is the one LIGO uses: hide simulated chirps in real noise and "
+        "count how many it finds. It catches about half at a signal-to-noise "
+        "ratio of 8 and nine in ten at 15, while flagging plain noise only "
+        "1.8% of the time.");
+
+    section(
+        "Weighing the Black Holes",
+        "For real signals, the tool compares the recording against about "
+        "3,000 chirps predicted by Einstein's equations for different masses "
+        "-- the same matched-filtering idea LIGO's searches use -- and keeps "
+        "the best match. That gives the chirp mass, which sets how fast the "
+        "chirp sweeps up. Noise alone can produce a match strength up to 6.4, "
+        "so only clearer matches count: for those 76 mergers the result is "
+        "within 2.2% of LIGO's published value (median).");
 
     ImGui::EndChild();
 

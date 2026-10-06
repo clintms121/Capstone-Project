@@ -4,8 +4,8 @@
 #include "imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
 
-// Renders the post-Begin menu: choose between reading about the research
-// or jumping into the merger simulation.
+// Renders the post-Begin menu: read about the research, try the classifier
+// on real data, or open the (in-progress) merger simulation.
 Screen render_menu_screen(GLFWwindow* window) {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
@@ -41,10 +41,10 @@ Screen render_menu_screen(GLFWwindow* window) {
     ImGui::SetCursorPos(ImVec2((screen_w - heading_w) * 0.5f, screen_h * 0.35f));
     ImGui::Text("%s", heading);
 
-    float btn_w = 200.0f;
+    float btn_w = 240.0f;
     float btn_h = 32.0f;
     float gap = 20.0f;
-    float total_w = btn_w * 2 + gap;
+    float total_w = btn_w * 3 + gap * 2;
     float start_x = (screen_w - total_w) * 0.5f;
     float btn_y = screen_h * 0.35f + 50.0f;
 
@@ -53,7 +53,11 @@ Screen render_menu_screen(GLFWwindow* window) {
         next = Screen::Research;
 
     ImGui::SetCursorPos(ImVec2(start_x + btn_w + gap, btn_y));
-    if (ImGui::Button("Start Simulation", ImVec2(btn_w, btn_h)))
+    if (ImGui::Button("Classifier Demo", ImVec2(btn_w, btn_h)))
+        next = Screen::Demo;
+
+    ImGui::SetCursorPos(ImVec2(start_x + 2 * (btn_w + gap), btn_y));
+    if (ImGui::Button("Merger Simulation (in progress)", ImVec2(btn_w, btn_h)))
         next = Screen::Simulation;
 
     float back_w = 180.0f;

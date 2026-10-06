@@ -4,6 +4,7 @@ pandas
 scikit-learn
 matplotlib
 h5py
+certifi
 torch
 tqdm
 

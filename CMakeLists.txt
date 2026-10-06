@@ -41,8 +41,11 @@ add_executable(capstone
     graphics/menu_screen.cpp
     graphics/research_screen.cpp
     graphics/under_the_hood_screen.cpp
+    graphics/earth_scene.cpp
     graphics/spacetime_simulation_screen.cpp
     graphics/simulation_screen.cpp
+    graphics/demo_screen.cpp
+    graphics/demo_data.cpp
     graphics/manifest.cpp
     ${IMGUI_SOURCES}
 )
@@ -52,4 +55,4 @@ target_include_directories(capstone PRIVATE
     ${imgui_SOURCE_DIR}/backends
 )
 
-target_link_libraries(capstone PRIVATE glfw opengl32 shell32)
+target_link_libraries(capstone PRIVATE glfw opengl32 glu32 shell32)

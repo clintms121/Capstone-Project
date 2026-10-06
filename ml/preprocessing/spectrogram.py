@@ -106,6 +106,76 @@ def make_spectrogram(
     return normalized.astype(np.float32)
 
 
+def qscan_row_frequencies(
+    fs: float,
+    freq_range: tuple[float, float] = (10.0, 2048.0),
+    n_rows: int = 140,
+) -> np.ndarray:
+    """Center frequency (Hz) of each make_qscan row; row 0 is the highest."""
+    return np.geomspace(freq_range[0], min(freq_range[1], fs / 2), n_rows)[::-1]
+
+
+def make_qscan(
+    strain: np.ndarray,
+    dt: float,
+    gps_start: float,
+    event_gps: float,
+    window_s: float = 1.0,
+    freq_range: tuple[float, float] = (10.0, 2048.0),
+    qs: tuple[float, ...] = (4.0, 8.0, 16.0, 32.0, 64.0),
+    out_size: tuple[int, int] = (140, 170),
+) -> np.ndarray:
+    """Constant-Q "omega scan" of whitened strain around `event_gps`, laid out
+    like the Gravity Spy training images so both classifier classes share one
+    visual domain: log-spaced 10-2048 Hz rows with high frequency at row 0,
+    1 s of time, 140x170, normalized energy (noise ~1) clipped to [0, 25.5]
+    and scaled to [0, 1] -- the same range Gravity Spy's colorbar uses.
+
+    Same algorithm as gwpy's q_transform: for each row frequency f, apply a
+    bisquare window of half-width f*sqrt(11)/Q around +f in the frequency
+    domain, inverse FFT for the analytic band-limited signal, take |.|^2,
+    normalize by the row's median energy over the full segment. Several Qs
+    are tried and the plane with the highest peak is kept. Like gwpy, each
+    row's inverse FFT only spans its own band (shifted to baseband, which
+    leaves |.|^2 unchanged), so narrow low-frequency rows are cheap.
+    """
+    fs = 1.0 / dt
+    white = whiten(strain, dt)
+    n = len(white)
+    duration = n * dt
+    df = 1.0 / duration
+    data_fft = np.fft.rfft(white)
+
+    t_start = event_gps - gps_start - window_s / 2
+    if t_start < 0 or t_start + window_s > duration:
+        raise ValueError("window extends outside the loaded strain segment")
+
+    sub = 8  # envelope samples averaged per output column
+    t_fine = t_start + (np.arange(out_size[1] * sub) + 0.5) * window_s / (out_size[1] * sub)
+    min_len = 1 << int(np.ceil(np.log2(2 * duration * out_size[1] / window_s)))
+
+    row_freqs = qscan_row_frequencies(fs, freq_range, out_size[0])
+
+    best_plane, best_peak = None, -np.inf
+    for q in qs:
+        plane = np.empty(out_size)
+        for i, f in enumerate(row_freqs):
+            half_bw = f * np.sqrt(11) / q
+            k = np.arange(max(1, int(np.ceil((f - half_bw) / df))),
+                          min(n // 2, int(np.floor((f + half_bw) / df))) + 1)
+            x = (k * df - f) / half_bw
+            length = max(min_len, 1 << int(np.ceil(np.log2(2 * len(k)))))
+            band = np.zeros(length, dtype=complex)
+            band[:len(k)] = data_fft[k] * (1 - x**2) ** 2
+            energy = np.abs(np.fft.ifft(band)) ** 2
+            fine = np.interp(t_fine, np.arange(length) * duration / length, energy, period=duration)
+            plane[i] = fine.reshape(out_size[1], sub).mean(axis=1) / np.median(energy)
+        if plane.max() > best_peak:
+            best_plane, best_peak = plane, plane.max()
+
+    return (np.clip(best_plane, 0.0, 25.5) / 25.5).astype(np.float32)
+
+
 if __name__ == "__main__":
     import argparse
     from pathlib import Path

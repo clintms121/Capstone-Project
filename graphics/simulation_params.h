@@ -11,7 +11,7 @@ struct SimulationParams {
     std::string event_id;
     double chirp_mass_msun = 0.0;
     double mass_ratio = 0.0;      // m2 / m1, in (0, 1]
-    std::string trajectory_path;  // data/trajectories/<event_id>.npz
+    std::string trajectory_path;  // data/trajectories/<event_id>.csv (format: physics/README.md)
 
     bool is_selected() const { return !event_id.empty(); }
 };
