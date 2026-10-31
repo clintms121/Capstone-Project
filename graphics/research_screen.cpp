@@ -1,8 +1,13 @@
+// The Research screen: open the research paper (docs/research_paper.pdf)
+// or go to the Under the Hood slides.
 #include "screen.h"
+#include "back_button.h"
+#include "fonts.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
+#include <algorithm>
 #include <filesystem>
 #include <string>
 
@@ -37,8 +42,8 @@ std::string open_research_paper() {
 
 } // namespace
 
-// Research summary screen. Content here should track the writeup in
-// ml/README.md and physics/README.md as the project develops.
+// Research screen: open the research paper or go to the Under the Hood
+// walkthrough.
 Screen render_research_screen(GLFWwindow* window) {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
@@ -64,32 +69,21 @@ Screen render_research_screen(GLFWwindow* window) {
 
     ImGui::PushStyleColor(ImGuiCol_WindowBg,        ImVec4(0, 0, 0, 0));
     ImGui::PushStyleColor(ImGuiCol_Text,            ImVec4(1, 1, 1, 1));
-    ImGui::PushStyleColor(ImGuiCol_Button,          ImVec4(0.15f, 0.15f, 0.15f, 1));
-    ImGui::PushStyleColor(ImGuiCol_ButtonHovered,   ImVec4(0.28f, 0.28f, 0.28f, 1));
-    ImGui::PushStyleColor(ImGuiCol_ButtonActive,    ImVec4(0.38f, 0.38f, 0.38f, 1));
+    ImGui::PushStyleColor(ImGuiCol_Button,          ImVec4(0.12f, 0.16f, 0.26f, 1));
+    ImGui::PushStyleColor(ImGuiCol_ButtonHovered,   ImVec4(0.20f, 0.28f, 0.45f, 1));
+    ImGui::PushStyleColor(ImGuiCol_ButtonActive,    ImVec4(0.28f, 0.38f, 0.60f, 1));
 
     ImGui::Begin("##research", nullptr, flags);
 
-    ImGui::SetCursorPos(ImVec2(40.0f, 40.0f));
-    ImGui::TextWrapped(
-        "Gravitational Wave Classification + Merger Visualization\n\n"
-        "1. Classifier: LIGO open strain data (GWOSC) + the Gravity Spy glitch "
-        "dataset are turned into Q-transform spectrograms and used to train a "
-        "CNN that separates real compact-binary signals from ~20 classes of "
-        "detector glitches.\n\n"
-        "2. Parameter estimation: chirp mass and mass ratio are estimated from "
-        "the identified signal's time-frequency track.\n\n"
-        "3. Visualization: the estimated masses drive a post-Newtonian inspiral "
-        "trajectory and a damped-sinusoid ringdown, animated in 3D in the "
-        "Simulation screen."
-    );
-
-    float btn_w = 220.0f;
-    float btn_h = 32.0f;
-    float gap = 20.0f;
+    float gap = 40.0f;
+    float btn_w = std::min(360.0f, (screen_w - 80.0f - gap) / 2);
+    float btn_h = 90.0f;
     float total_w = btn_w * 2 + gap;
     float start_x = (screen_w - total_w) * 0.5f;
-    float btn_y = screen_h * 0.65f;
+    float btn_y = (screen_h - btn_h) * 0.45f;
+
+    ImGui::PushFont(g_font_subtitle);
+    ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 10.0f);
 
     ImGui::SetCursorPos(ImVec2(start_x, btn_y));
     if (ImGui::Button("Download Research Paper", ImVec2(btn_w, btn_h)))
@@ -99,16 +93,16 @@ Screen render_research_screen(GLFWwindow* window) {
     if (ImGui::Button("Under the Hood", ImVec2(btn_w, btn_h)))
         next = Screen::UnderTheHood;
 
+    ImGui::PopStyleVar();
+    ImGui::PopFont();
+
     if (!download_status.empty()) {
         float status_w = ImGui::CalcTextSize(download_status.c_str()).x;
         ImGui::SetCursorPos(ImVec2((screen_w - status_w) * 0.5f, btn_y + btn_h + 12.0f));
         ImGui::TextWrapped("%s", download_status.c_str());
     }
 
-    float back_w = 90.0f;
-    float back_h = 28.0f;
-    ImGui::SetCursorPos(ImVec2(40.0f, screen_h - back_h - 40.0f));
-    if (ImGui::Button("Back", ImVec2(back_w, back_h))) {
+    if (back_button("< Back to Menu")) {
         download_status.clear();
         next = Screen::Menu;
     }

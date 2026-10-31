@@ -3,7 +3,13 @@ scipy
 pandas
 scikit-learn
 matplotlib
+h5py
+certifi
 torch
-gwpy
-gwosc
 tqdm
+
+# Not needed: the pipeline downloads and reads LIGO data itself with plain
+# HTTP, h5py and numpy. gwpy/gwosc would be the usual tools, but they need a
+# C compiler (MSVC on Windows) to install, so they're left out.
+# gwpy
+# gwosc
