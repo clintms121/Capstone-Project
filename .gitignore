@@ -5,6 +5,15 @@ imgui.ini
 __pycache__/
 *.pyc
 
-/data/
+# Pipeline data is huge (raw downloads alone are ~3.6 GB), except the two
+# small folders the app reads at startup, which are committed so the app
+# works right after cloning.
+/data/*
+!/data/demo/
+!/data/trajectories/
 *.hdf5
 models/**/*.fits
+
+# Unused originals of images in imgs/
+imgs/IMG_7026.jpeg
+imgs/Black_hole.webp

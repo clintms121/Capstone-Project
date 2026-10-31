@@ -1,0 +1,432 @@
+id,kind,name,detector,true_label,split,pred1,p1,pred2,p2,pred3,p3,p_real,snr,mc_est,mc_pub,measurable,distance_ly,image
+0,event,GW150914,H1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,9.99,34.060,30.690,1,1.344e+09,data/demo/img/0000.pgm
+1,event,GW150914,L1,real_signal,test,real_signal,0.9999,Helix,0.0001,No_Glitch,0.0000,0.9999,6.23,32.077,30.690,0,1.344e+09,data/demo/img/0001.pgm
+2,event,GW151226,H1,real_signal,train,real_signal,0.8420,No_Glitch,0.1577,None_of_the_Above,0.0003,0.8420,9.34,9.725,9.790,1,1.344e+09,data/demo/img/0002.pgm
+3,event,GW151226,L1,real_signal,train,real_signal,0.9682,No_Glitch,0.0318,Helix,0.0000,0.9682,6.83,9.725,9.790,1,1.344e+09,data/demo/img/0003.pgm
+4,event,GW170104,H1,real_signal,train,real_signal,0.9997,No_Glitch,0.0002,Helix,0.0000,0.9997,5.34,1.204,25.742,0,2.725e+09,data/demo/img/0004.pgm
+5,event,GW170104,L1,real_signal,train,real_signal,0.9827,No_Glitch,0.0172,Light_Modulation,0.0001,0.9827,5.59,25.232,25.742,0,2.725e+09,data/demo/img/0005.pgm
+6,event,GW170608,H1,real_signal,train,real_signal,0.9901,No_Glitch,0.0097,Helix,0.0001,0.9901,9.65,8.292,8.453,1,9.608e+08,data/demo/img/0006.pgm
+7,event,GW170608,L1,real_signal,train,real_signal,0.9996,No_Glitch,0.0004,Helix,0.0000,0.9996,8.21,8.462,8.453,1,9.608e+08,data/demo/img/0007.pgm
+8,event,GW170729,H1,real_signal,train,real_signal,0.9999,Helix,0.0001,No_Glitch,0.0000,0.9999,5.26,0.879,49.824,0,4.74e+09,data/demo/img/0008.pgm
+9,event,GW170729,L1,real_signal,train,real_signal,0.9214,No_Glitch,0.0758,Tomte,0.0009,0.9214,5.43,2.312,49.824,0,4.74e+09,data/demo/img/0009.pgm
+10,event,GW170809,H1,real_signal,test,real_signal,0.9983,No_Glitch,0.0016,Helix,0.0001,0.9983,5.30,2.931,30.008,0,2.618e+09,data/demo/img/0010.pgm
+11,event,GW170809,L1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.95,31.129,30.008,1,2.618e+09,data/demo/img/0011.pgm
+12,event,GW170814,H1,real_signal,test,real_signal,0.9997,No_Glitch,0.0003,Helix,0.0000,0.9997,6.78,28.450,27.233,1,1.711e+09,data/demo/img/0012.pgm
+13,event,GW170814,L1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,8.49,27.609,27.233,1,1.711e+09,data/demo/img/0013.pgm
+14,event,GW170817,H1,real_signal,train,real_signal,0.9716,No_Glitch,0.0274,Helix,0.0005,0.9716,16.11,1.195,1.198,1,1.433e+08,data/demo/img/0014.pgm
+15,event,GW170817,L1,real_signal,train,real_signal,0.9559,No_Glitch,0.0438,None_of_the_Above,0.0001,0.9559,7.23,1.195,1.198,1,1.433e+08,data/demo/img/0015.pgm
+16,event,GW170818,H1,real_signal,train,real_signal,0.9788,No_Glitch,0.0211,Scratchy,0.0000,0.9788,6.06,1.297,32.428,0,2.618e+09,data/demo/img/0016.pgm
+17,event,GW170818,L1,real_signal,train,real_signal,0.9893,No_Glitch,0.0099,Blip,0.0008,0.9893,4.88,5.514,32.428,0,2.618e+09,data/demo/img/0017.pgm
+18,event,GW170823,H1,real_signal,train,real_signal,0.9747,No_Glitch,0.0252,Blip,0.0001,0.9747,5.36,0.888,38.896,0,4.074e+09,data/demo/img/0018.pgm
+19,event,GW170823,L1,real_signal,train,real_signal,0.9997,Helix,0.0002,No_Glitch,0.0001,0.9997,5.20,1.001,38.896,0,4.074e+09,data/demo/img/0019.pgm
+20,event,GW190425,L1,real_signal,val,real_signal,0.8599,No_Glitch,0.1400,None_of_the_Above,0.0001,0.8599,10.65,1.484,1.483,1,4.237e+08,data/demo/img/0020.pgm
+21,event,GW190521,H1,real_signal,train,real_signal,0.9429,No_Glitch,0.0538,Helix,0.0029,0.9429,5.40,1.006,98.748,0,5.619e+09,data/demo/img/0021.pgm
+22,event,GW190521,L1,real_signal,train,real_signal,0.9994,No_Glitch,0.0006,Helix,0.0000,0.9994,6.05,26.793,98.748,0,5.619e+09,data/demo/img/0022.pgm
+23,event,GW190620_030421,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.39,32.077,57.150,0,5.196e+09,data/demo/img/0023.pgm
+24,event,GW190630_185205,L1,real_signal,val,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,9.18,29.316,29.618,1,2.29e+09,data/demo/img/0024.pgm
+25,event,GW190701_203306,H1,real_signal,train,real_signal,0.9459,No_Glitch,0.0527,Helix,0.0009,0.9459,5.16,1.295,55.476,0,4.247e+09,data/demo/img/0025.pgm
+26,event,GW190701_203306,L1,real_signal,train,real_signal,0.9958,No_Glitch,0.0041,None_of_the_Above,0.0001,0.9958,5.62,1.775,55.476,0,4.247e+09,data/demo/img/0026.pgm
+27,event,GW190708_232457,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,9.58,15.613,15.589,1,2.401e+09,data/demo/img/0027.pgm
+28,event,GW190814,H1,real_signal,train,real_signal,0.9642,No_Glitch,0.0349,Helix,0.0007,0.9642,7.38,6.972,6.416,1,6.961e+08,data/demo/img/0028.pgm
+29,event,GW190814,L1,real_signal,train,real_signal,0.9999,No_Glitch,0.0000,Helix,0.0000,0.9999,5.86,7.191,6.416,0,6.961e+08,data/demo/img/0029.pgm
+30,event,GW190910_112807,L1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.32,1.523,43.215,0,3.431e+09,data/demo/img/0030.pgm
+31,event,GW190924_021846,H1,real_signal,train,real_signal,0.5469,No_Glitch,0.4521,Blip,0.0002,0.5469,5.85,6.494,6.438,0,1.468e+09,data/demo/img/0031.pgm
+32,event,GW190924_021846,L1,real_signal,train,real_signal,0.9985,No_Glitch,0.0015,Helix,0.0000,0.9985,7.41,6.494,6.438,1,1.468e+09,data/demo/img/0032.pgm
+33,event,GW191109_010717,H1,real_signal,train,real_signal,0.9995,No_Glitch,0.0005,Helix,0.0000,0.9995,6.14,14.270,59.375,0,3.036e+09,data/demo/img/0033.pgm
+34,event,GW191109_010717,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.86,50.306,59.375,0,3.036e+09,data/demo/img/0034.pgm
+35,event,GW191129_134029,H1,real_signal,train,real_signal,0.8719,No_Glitch,0.1270,Helix,0.0007,0.8719,6.81,8.462,8.480,1,2.063e+09,data/demo/img/0035.pgm
+36,event,GW191129_134029,L1,real_signal,train,real_signal,0.9990,No_Glitch,0.0010,Helix,0.0000,0.9990,9.53,8.462,8.480,1,2.063e+09,data/demo/img/0036.pgm
+37,event,GW191204_171526,H1,real_signal,train,real_signal,0.9995,No_Glitch,0.0005,Helix,0.0000,0.9995,8.53,9.725,9.673,1,1.711e+09,data/demo/img/0037.pgm
+38,event,GW191204_171526,L1,real_signal,train,real_signal,0.9966,No_Glitch,0.0029,Paired_Doves,0.0003,0.9966,12.84,9.725,9.673,1,1.711e+09,data/demo/img/0038.pgm
+39,event,GW191215_223052,H1,real_signal,train,real_signal,0.9136,No_Glitch,0.0862,Helix,0.0002,0.9136,5.29,1.340,24.840,0,3.986e+09,data/demo/img/0039.pgm
+40,event,GW191215_223052,L1,real_signal,train,real_signal,0.9991,No_Glitch,0.0008,Helix,0.0000,0.9991,5.29,5.691,24.840,0,3.986e+09,data/demo/img/0040.pgm
+41,event,GW191216_213338,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,13.44,9.036,8.913,1,9.608e+08,data/demo/img/0041.pgm
+42,event,GW191222_033537,H1,real_signal,train,real_signal,0.9985,No_Glitch,0.0014,Blip,0.0001,0.9985,5.40,0.800,51.038,0,5.269e+09,data/demo/img/0042.pgm
+43,event,GW191222_033537,L1,real_signal,train,real_signal,0.9993,No_Glitch,0.0007,Helix,0.0000,0.9993,5.41,1.110,51.038,0,5.269e+09,data/demo/img/0043.pgm
+44,event,GW191230_180458,H1,real_signal,test,real_signal,0.9749,No_Glitch,0.0241,Helix,0.0006,0.9749,5.13,1.727,61.685,0,6.434e+09,data/demo/img/0044.pgm
+45,event,GW191230_180458,L1,real_signal,test,real_signal,0.9867,No_Glitch,0.0129,Helix,0.0003,0.9867,5.41,4.392,61.685,0,6.434e+09,data/demo/img/0045.pgm
+46,event,GW200112_155838,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,8.83,33.054,33.976,1,2.934e+09,data/demo/img/0046.pgm
+47,event,GW200115_042309,H1,real_signal,train,real_signal,0.6094,No_Glitch,0.3901,Helix,0.0002,0.6094,5.31,2.713,2.576,0,8.294e+08,data/demo/img/0047.pgm
+48,event,GW200115_042309,L1,real_signal,train,real_signal,0.9947,No_Glitch,0.0053,None_of_the_Above,0.0000,0.9947,5.29,1.730,2.576,0,8.294e+08,data/demo/img/0048.pgm
+49,event,GW200128_022011,H1,real_signal,train,real_signal,0.9989,No_Glitch,0.0008,Helix,0.0003,0.9989,5.19,1.300,49.920,0,5.619e+09,data/demo/img/0049.pgm
+50,event,GW200128_022011,L1,real_signal,train,real_signal,0.9896,No_Glitch,0.0103,Helix,0.0001,0.9896,5.36,44.618,49.920,0,5.619e+09,data/demo/img/0050.pgm
+51,event,GW200129_065458,H1,real_signal,train,real_signal,0.9994,No_Glitch,0.0004,Helix,0.0001,0.9994,5.43,31.129,32.096,0,2.29e+09,data/demo/img/0051.pgm
+52,event,GW200129_065458,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,8.78,29.316,32.096,1,2.29e+09,data/demo/img/0052.pgm
+53,event,GW200202_154313,H1,real_signal,train,real_signal,0.9299,No_Glitch,0.0700,None_of_the_Above,0.0001,0.9299,5.35,1.038,8.164,0,1.218e+09,data/demo/img/0053.pgm
+54,event,GW200202_154313,L1,real_signal,train,real_signal,0.9993,No_Glitch,0.0007,Helix,0.0000,0.9993,8.68,8.130,8.164,1,1.218e+09,data/demo/img/0054.pgm
+55,event,GW200208_130117,H1,real_signal,train,real_signal,0.7803,No_Glitch,0.2193,Scratchy,0.0002,0.7803,5.43,0.989,38.780,0,4.416e+09,data/demo/img/0055.pgm
+56,event,GW200208_130117,L1,real_signal,train,real_signal,0.9541,No_Glitch,0.0452,Helix,0.0002,0.9541,5.13,0.986,38.780,0,4.416e+09,data/demo/img/0056.pgm
+57,event,GW200219_094415,H1,real_signal,train,real_signal,0.5890,No_Glitch,0.4092,Helix,0.0013,0.5890,5.56,1.966,43.332,0,5.686e+09,data/demo/img/0057.pgm
+58,event,GW200219_094415,L1,real_signal,train,real_signal,0.9941,No_Glitch,0.0058,Blip,0.0000,0.9941,5.15,2.237,43.332,0,5.686e+09,data/demo/img/0058.pgm
+59,event,GW200224_222234,H1,real_signal,test,real_signal,0.9727,Blip,0.0159,No_Glitch,0.0103,0.9727,6.52,21.718,41.052,1,3.714e+09,data/demo/img/0059.pgm
+60,event,GW200224_222234,L1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.40,22.379,41.052,0,3.714e+09,data/demo/img/0060.pgm
+61,event,GW200225_060421,H1,real_signal,train,real_signal,0.9937,No_Glitch,0.0043,Helix,0.0020,0.9937,5.88,19.262,17.324,0,2.725e+09,data/demo/img/0061.pgm
+62,event,GW200225_060421,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.61,23.763,17.324,0,2.725e+09,data/demo/img/0062.pgm
+63,event,GW200302_015811,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.60,23.061,29.952,0,3.334e+09,data/demo/img/0063.pgm
+64,event,GW200311_115853,H1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.16,0.875,32.718,0,2.83e+09,data/demo/img/0064.pgm
+65,event,GW200311_115853,L1,real_signal,test,real_signal,0.9996,No_Glitch,0.0004,Helix,0.0000,0.9996,5.54,31.129,32.718,0,2.83e+09,data/demo/img/0065.pgm
+66,event,GW200316_215756,H1,real_signal,train,real_signal,0.8218,No_Glitch,0.1780,Helix,0.0001,0.8218,6.55,1.469,10.675,1,2.725e+09,data/demo/img/0066.pgm
+67,event,GW200316_215756,L1,real_signal,train,real_signal,0.9994,No_Glitch,0.0006,Helix,0.0000,0.9994,7.37,10.571,10.675,1,2.725e+09,data/demo/img/0067.pgm
+68,event,GW230517_044807,H1,real_signal,train,real_signal,0.9798,No_Glitch,0.0202,Helix,0.0000,0.9798,nan,nan,nan,0,nan,data/demo/img/0068.pgm
+69,event,GW230517_044807,L1,real_signal,train,real_signal,0.9957,No_Glitch,0.0043,Helix,0.0000,0.9957,nan,nan,nan,0,nan,data/demo/img/0069.pgm
+70,event,GW230518_125908,H1,real_signal,test,real_signal,0.9870,No_Glitch,0.0130,None_of_the_Above,0.0000,0.9870,5.78,3.089,2.940,0,6.961e+08,data/demo/img/0070.pgm
+71,event,GW230518_125908,L1,real_signal,test,real_signal,0.7806,No_Glitch,0.2193,Scattered_Light,0.0000,0.7806,5.66,2.974,2.940,0,6.961e+08,data/demo/img/0071.pgm
+72,event,GW230529_181500,L1,real_signal,train,real_signal,0.9804,No_Glitch,0.0194,Helix,0.0001,0.9804,5.17,2.066,2.018,0,5.609e+08,data/demo/img/0072.pgm
+73,event,GW230601_224134,H1,real_signal,test,real_signal,0.9998,No_Glitch,0.0001,Helix,0.0000,0.9998,5.14,1.886,72.160,0,5.884e+09,data/demo/img/0073.pgm
+74,event,GW230601_224134,L1,real_signal,test,real_signal,0.9960,No_Glitch,0.0033,Paired_Doves,0.0007,0.9960,5.79,31.129,72.160,0,5.884e+09,data/demo/img/0074.pgm
+75,event,GW230605_065343,H1,real_signal,train,real_signal,0.9655,No_Glitch,0.0345,Helix,0.0000,0.9655,5.97,15.152,14.459,0,2.618e+09,data/demo/img/0075.pgm
+76,event,GW230605_065343,L1,real_signal,train,real_signal,0.9946,No_Glitch,0.0054,Paired_Doves,0.0000,0.9946,6.74,15.152,14.459,1,2.618e+09,data/demo/img/0076.pgm
+77,event,GW230606_004305,H1,real_signal,train,real_signal,0.9903,No_Glitch,0.0094,Blip,0.0002,0.9903,5.56,0.970,39.220,0,5.048e+09,data/demo/img/0077.pgm
+78,event,GW230606_004305,L1,real_signal,train,real_signal,0.9912,No_Glitch,0.0073,Blip,0.0010,0.9912,5.22,0.913,39.220,0,5.048e+09,data/demo/img/0078.pgm
+79,event,GW230606_065320,H1,real_signal,train,real_signal,0.9701,No_Glitch,0.0291,None_of_the_Above,0.0006,0.9701,nan,nan,nan,0,nan,data/demo/img/0079.pgm
+80,event,GW230606_065320,L1,real_signal,train,real_signal,0.9839,No_Glitch,0.0161,Paired_Doves,0.0000,0.9839,nan,nan,nan,0,nan,data/demo/img/0080.pgm
+81,event,GW230608_205047,L1,real_signal,train,real_signal,0.9842,No_Glitch,0.0158,Helix,0.0000,0.9842,5.39,1.337,51.666,0,5.753e+09,data/demo/img/0081.pgm
+82,event,GW230609_064958,H1,real_signal,train,real_signal,0.9766,No_Glitch,0.0233,Helix,0.0001,0.9766,5.49,0.814,39.936,0,5.619e+09,data/demo/img/0082.pgm
+83,event,GW230609_064958,L1,real_signal,train,real_signal,0.9896,No_Glitch,0.0101,Helix,0.0003,0.9896,5.15,0.968,39.936,0,5.619e+09,data/demo/img/0083.pgm
+84,event,GW230624_113103,H1,real_signal,train,real_signal,0.9996,No_Glitch,0.0003,Helix,0.0001,0.9996,6.32,19.849,24.300,0,3.986e+09,data/demo/img/0084.pgm
+85,event,GW230624_113103,L1,real_signal,train,real_signal,0.9828,No_Glitch,0.0171,None_of_the_Above,0.0000,0.9828,5.99,23.763,24.300,0,3.986e+09,data/demo/img/0085.pgm
+86,event,GW230624_214944,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,nan,nan,nan,0,nan,data/demo/img/0086.pgm
+87,event,GW230627_015337,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,19.12,6.326,6.441,1,9.608e+08,data/demo/img/0087.pgm
+88,event,GW230627_015337,L1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,15.31,6.409,6.441,1,9.608e+08,data/demo/img/0088.pgm
+89,event,GW230628_231200,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.91,33.054,35.700,1,4.416e+09,data/demo/img/0089.pgm
+90,event,GW230628_231200,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.25,1.085,35.700,0,4.416e+09,data/demo/img/0090.pgm
+91,event,GW230702_185453,H1,real_signal,train,real_signal,0.9530,No_Glitch,0.0469,Scattered_Light,0.0001,0.9530,6.38,45.977,32.976,0,4.74e+09,data/demo/img/0091.pgm
+92,event,GW230702_185453,L1,real_signal,train,real_signal,0.9862,No_Glitch,0.0136,Helix,0.0001,0.9862,5.28,0.908,32.976,0,4.74e+09,data/demo/img/0092.pgm
+93,event,GW230707_124047,H1,real_signal,val,real_signal,0.9936,No_Glitch,0.0063,Helix,0.0001,0.9936,5.42,14.270,60.021,0,6.549e+09,data/demo/img/0093.pgm
+94,event,GW230707_124047,L1,real_signal,val,real_signal,0.9992,No_Glitch,0.0008,Helix,0.0001,0.9992,5.44,0.908,60.021,0,6.549e+09,data/demo/img/0094.pgm
+95,event,GW230708_230935,H1,real_signal,train,real_signal,0.9997,No_Glitch,0.0003,Helix,0.0000,0.9997,5.10,5.404,67.734,0,5.819e+09,data/demo/img/0095.pgm
+96,event,GW230708_230935,L1,real_signal,train,real_signal,0.9701,No_Glitch,0.0298,Helix,0.0000,0.9701,5.66,0.928,67.734,0,5.819e+09,data/demo/img/0096.pgm
+97,event,GW230709_122727,H1,real_signal,test,real_signal,0.9689,No_Glitch,0.0279,None_of_the_Above,0.0013,0.9689,5.80,0.885,53.766,0,6.715e+09,data/demo/img/0097.pgm
+98,event,GW230709_122727,L1,real_signal,test,real_signal,0.9604,No_Glitch,0.0395,None_of_the_Above,0.0000,0.9604,5.20,0.803,53.766,0,6.715e+09,data/demo/img/0098.pgm
+99,event,GW230723_101834,H1,real_signal,train,real_signal,0.9973,No_Glitch,0.0027,Helix,0.0000,0.9973,5.77,16.089,14.820,0,3.527e+09,data/demo/img/0099.pgm
+100,event,GW230723_101834,L1,real_signal,train,real_signal,0.9994,No_Glitch,0.0006,Helix,0.0000,0.9994,5.42,0.951,14.820,0,3.527e+09,data/demo/img/0100.pgm
+101,event,GW230726_002940,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.51,30.209,37.264,0,4.161e+09,data/demo/img/0101.pgm
+102,event,GW230728_083628,H1,real_signal,train,real_signal,0.9635,No_Glitch,0.0362,None_of_the_Above,0.0001,0.9635,nan,nan,nan,0,nan,data/demo/img/0102.pgm
+103,event,GW230728_083628,L1,real_signal,train,real_signal,0.8266,No_Glitch,0.1726,Paired_Doves,0.0003,0.8266,nan,nan,nan,0,nan,data/demo/img/0103.pgm
+104,event,GW230731_215307,H1,real_signal,train,real_signal,0.9890,No_Glitch,0.0109,Helix,0.0001,0.9890,6.37,9.480,9.492,0,2.725e+09,data/demo/img/0104.pgm
+105,event,GW230731_215307,L1,real_signal,train,real_signal,0.9746,No_Glitch,0.0254,Helix,0.0000,0.9746,6.74,9.725,9.492,1,2.725e+09,data/demo/img/0105.pgm
+106,event,GW230811_032116,H1,real_signal,train,real_signal,0.8856,No_Glitch,0.1143,None_of_the_Above,0.0000,0.8856,5.20,1.026,33.258,0,4.247e+09,data/demo/img/0106.pgm
+107,event,GW230811_032116,L1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,7.00,36.166,33.258,1,4.247e+09,data/demo/img/0107.pgm
+108,event,GW230814_061920,H1,real_signal,val,real_signal,0.9827,No_Glitch,0.0167,Helix,0.0005,0.9827,5.41,16.579,75.440,0,6.136e+09,data/demo/img/0108.pgm
+109,event,GW230814_061920,L1,real_signal,val,real_signal,0.9823,No_Glitch,0.0177,Scattered_Light,0.0000,0.9823,5.30,1.748,75.440,0,6.136e+09,data/demo/img/0109.pgm
+110,event,GW230814_230901,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Paired_Doves,0.0000,1.0000,24.39,30.209,28.387,1,8.294e+08,data/demo/img/0110.pgm
+111,event,GW230824_033047,H1,real_signal,train,real_signal,0.9973,No_Glitch,0.0025,Helix,0.0002,0.9973,5.32,1.004,64.206,0,6.715e+09,data/demo/img/0111.pgm
+112,event,GW230824_033047,L1,real_signal,train,real_signal,0.9994,No_Glitch,0.0006,Helix,0.0000,0.9994,5.72,0.962,64.206,0,6.715e+09,data/demo/img/0112.pgm
+113,event,GW230904_051013,H1,real_signal,train,real_signal,0.9764,No_Glitch,0.0236,None_of_the_Above,0.0000,0.9764,5.52,0.875,9.036,0,2.51e+09,data/demo/img/0113.pgm
+114,event,GW230904_051013,L1,real_signal,train,real_signal,0.9993,No_Glitch,0.0006,Helix,0.0000,0.9993,7.25,9.251,9.036,1,2.51e+09,data/demo/img/0114.pgm
+115,event,GW230911_195324,H1,real_signal,train,real_signal,0.9938,Helix,0.0048,No_Glitch,0.0014,0.9938,5.46,1.018,29.232,0,3.137e+09,data/demo/img/0115.pgm
+116,event,GW230914_111401,H1,real_signal,test,real_signal,1.0000,Helix,0.0000,No_Glitch,0.0000,1.0000,5.82,45.977,58.506,0,4.973e+09,data/demo/img/0116.pgm
+117,event,GW230914_111401,L1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.37,1.587,58.506,0,4.973e+09,data/demo/img/0117.pgm
+118,event,GW230919_215712,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.58,24.487,26.250,1,3.036e+09,data/demo/img/0118.pgm
+119,event,GW230919_215712,L1,real_signal,train,real_signal,0.9998,No_Glitch,0.0002,Helix,0.0000,0.9998,7.70,26.793,26.250,1,3.036e+09,data/demo/img/0119.pgm
+120,event,GW230920_071124,H1,real_signal,train,real_signal,0.9938,No_Glitch,0.0061,Blip,0.0000,0.9938,5.72,19.262,35.611,0,5.123e+09,data/demo/img/0120.pgm
+121,event,GW230920_071124,L1,real_signal,train,real_signal,0.9997,No_Glitch,0.0002,Helix,0.0000,0.9997,5.27,0.970,35.611,0,5.123e+09,data/demo/img/0121.pgm
+122,event,GW230922_020344,H1,real_signal,test,real_signal,0.9996,No_Glitch,0.0004,Helix,0.0000,0.9996,5.57,0.943,38.252,0,3.621e+09,data/demo/img/0122.pgm
+123,event,GW230922_020344,L1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.80,45.977,38.252,0,3.621e+09,data/demo/img/0123.pgm
+124,event,GW230922_040658,H1,real_signal,train,real_signal,0.9959,No_Glitch,0.0032,Helix,0.0010,0.9959,5.10,0.900,101.920,0,7.775e+09,data/demo/img/0124.pgm
+125,event,GW230922_040658,L1,real_signal,train,real_signal,0.9991,No_Glitch,0.0009,Helix,0.0000,0.9991,6.21,55.044,101.920,0,7.775e+09,data/demo/img/0125.pgm
+126,event,GW230924_124453,H1,real_signal,test,real_signal,0.9998,Helix,0.0002,No_Glitch,0.0000,0.9998,5.91,30.209,31.666,0,4.58e+09,data/demo/img/0126.pgm
+127,event,GW230924_124453,L1,real_signal,test,real_signal,0.9998,No_Glitch,0.0002,Helix,0.0000,0.9998,5.09,1.114,31.666,0,4.58e+09,data/demo/img/0127.pgm
+128,event,GW230927_043729,H1,real_signal,test,real_signal,0.9996,No_Glitch,0.0003,Helix,0.0000,0.9996,6.11,0.811,41.075,0,5.551e+09,data/demo/img/0128.pgm
+129,event,GW230927_043729,L1,real_signal,test,real_signal,0.9940,No_Glitch,0.0060,Paired_Doves,0.0000,0.9940,5.03,0.852,41.075,0,5.551e+09,data/demo/img/0129.pgm
+130,event,GW230927_153832,H1,real_signal,val,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,7.60,21.076,20.135,1,2.83e+09,data/demo/img/0130.pgm
+131,event,GW230927_153832,L1,real_signal,val,real_signal,1.0000,Helix,0.0000,No_Glitch,0.0000,1.0000,11.54,20.453,20.135,1,2.83e+09,data/demo/img/0131.pgm
+132,event,GW230928_215827,H1,real_signal,train,real_signal,0.9967,No_Glitch,0.0033,Helix,0.0000,0.9967,5.74,1.331,59.472,0,6.876e+09,data/demo/img/0132.pgm
+133,event,GW230928_215827,L1,real_signal,train,real_signal,0.9977,No_Glitch,0.0023,None_of_the_Above,0.0000,0.9977,5.56,1.189,59.472,0,6.876e+09,data/demo/img/0133.pgm
+134,event,GW231001_140220,H1,real_signal,val,real_signal,0.9976,No_Glitch,0.0023,Helix,0.0001,0.9976,6.48,31.129,79.220,1,6.492e+09,data/demo/img/0134.pgm
+135,event,GW231001_140220,L1,real_signal,val,real_signal,0.9988,No_Glitch,0.0012,Helix,0.0000,0.9988,5.61,38.403,79.220,0,6.492e+09,data/demo/img/0135.pgm
+136,event,GW231005_021030,H1,real_signal,val,real_signal,0.9966,No_Glitch,0.0034,Paired_Doves,0.0000,0.9966,4.97,1.824,104.220,0,7.646e+09,data/demo/img/0136.pgm
+137,event,GW231005_021030,L1,real_signal,val,real_signal,0.9850,No_Glitch,0.0148,Helix,0.0001,0.9850,5.67,2.890,104.220,0,7.646e+09,data/demo/img/0137.pgm
+138,event,GW231005_091549,H1,real_signal,train,real_signal,0.9543,No_Glitch,0.0457,Helix,0.0000,0.9543,5.25,1.804,34.506,0,6.011e+09,data/demo/img/0138.pgm
+139,event,GW231005_091549,L1,real_signal,train,real_signal,0.9849,No_Glitch,0.0151,Scattered_Light,0.0000,0.9849,6.14,1.033,34.506,0,6.011e+09,data/demo/img/0139.pgm
+140,event,GW231020_142947,H1,real_signal,train,real_signal,0.9992,No_Glitch,0.0008,Helix,0.0000,0.9992,8.70,9.987,10.007,1,2.934e+09,data/demo/img/0140.pgm
+141,event,GW231020_142947,L1,real_signal,train,real_signal,0.9389,No_Glitch,0.0611,None_of_the_Above,0.0000,0.9389,6.38,9.725,10.007,0,2.934e+09,data/demo/img/0141.pgm
+142,event,GW231028_153006,H1,real_signal,train,real_signal,0.9999,No_Glitch,0.0000,Helix,0.0000,0.9999,5.41,30.209,105.840,0,6.376e+09,data/demo/img/0142.pgm
+143,event,GW231028_153006,L1,real_signal,train,real_signal,0.9998,No_Glitch,0.0002,Paired_Doves,0.0000,0.9998,6.97,48.820,105.840,1,6.376e+09,data/demo/img/0143.pgm
+144,event,GW231029_111508,L1,real_signal,train,real_signal,0.9997,No_Glitch,0.0002,Helix,0.0001,0.9997,5.03,0.885,67.932,0,5.412e+09,data/demo/img/0144.pgm
+145,event,GW231102_071736,H1,real_signal,train,real_signal,0.9996,No_Glitch,0.0004,Helix,0.0000,0.9996,5.55,0.997,70.579,0,6.074e+09,data/demo/img/0145.pgm
+146,event,GW231102_071736,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.41,36.166,70.579,0,6.074e+09,data/demo/img/0146.pgm
+147,event,GW231104_133418,H1,real_signal,train,real_signal,0.9987,No_Glitch,0.0013,Helix,0.0000,0.9987,7.65,11.567,11.315,1,3.334e+09,data/demo/img/0147.pgm
+148,event,GW231104_133418,L1,real_signal,train,real_signal,0.8804,No_Glitch,0.1194,None_of_the_Above,0.0002,0.8804,6.93,11.225,11.315,1,3.334e+09,data/demo/img/0148.pgm
+149,event,GW231108_125142,H1,real_signal,val,real_signal,0.9986,No_Glitch,0.0014,Blip,0.0000,0.9986,6.50,23.061,23.701,1,4.161e+09,data/demo/img/0149.pgm
+150,event,GW231108_125142,L1,real_signal,val,real_signal,0.9966,No_Glitch,0.0034,Helix,0.0001,0.9966,6.99,25.232,23.701,1,4.161e+09,data/demo/img/0150.pgm
+151,event,GW231110_040320,H1,real_signal,test,real_signal,0.9226,No_Glitch,0.0774,None_of_the_Above,0.0000,0.9226,5.52,1.093,18.090,0,3.986e+09,data/demo/img/0151.pgm
+152,event,GW231110_040320,L1,real_signal,test,real_signal,0.9997,No_Glitch,0.0003,Helix,0.0000,0.9997,7.14,17.604,18.090,1,3.986e+09,data/demo/img/0152.pgm
+153,event,GW231113_200417,H1,real_signal,test,real_signal,0.9831,No_Glitch,0.0169,Scattered_Light,0.0000,0.9831,6.28,9.987,9.840,0,2.83e+09,data/demo/img/0153.pgm
+154,event,GW231113_200417,L1,real_signal,test,real_signal,0.9972,No_Glitch,0.0028,Helix,0.0000,0.9972,5.73,0.913,9.840,0,2.83e+09,data/demo/img/0154.pgm
+155,event,GW231114_043211,H1,real_signal,train,real_signal,0.9950,No_Glitch,0.0050,Helix,0.0000,0.9950,6.49,15.152,14.616,1,3.137e+09,data/demo/img/0155.pgm
+156,event,GW231114_043211,L1,real_signal,train,real_signal,0.9901,No_Glitch,0.0099,Helix,0.0000,0.9901,5.24,2.505,14.616,0,3.137e+09,data/demo/img/0156.pgm
+157,event,GW231118_005626,H1,real_signal,train,real_signal,0.8303,No_Glitch,0.1679,None_of_the_Above,0.0009,0.8303,5.81,16.579,17.514,0,4.332e+09,data/demo/img/0157.pgm
+158,event,GW231118_005626,L1,real_signal,train,real_signal,0.9832,No_Glitch,0.0168,Helix,0.0000,0.9832,5.46,1.416,17.514,0,4.332e+09,data/demo/img/0158.pgm
+159,event,GW231118_090602,H1,real_signal,train,real_signal,0.9953,No_Glitch,0.0047,Helix,0.0000,0.9953,7.35,10.268,10.534,1,3.137e+09,data/demo/img/0159.pgm
+160,event,GW231118_090602,L1,real_signal,train,real_signal,0.9963,No_Glitch,0.0037,Paired_Doves,0.0000,0.9963,6.29,10.571,10.534,0,3.137e+09,data/demo/img/0160.pgm
+161,event,GW231120_022103,H1,real_signal,train,real_signal,0.9758,No_Glitch,0.0236,Helix,0.0002,0.9758,nan,nan,nan,0,nan,data/demo/img/0161.pgm
+162,event,GW231120_022103,L1,real_signal,train,real_signal,0.9993,No_Glitch,0.0006,Helix,0.0000,0.9993,nan,nan,nan,0,nan,data/demo/img/0162.pgm
+163,event,GW231123_135430,H1,real_signal,train,real_signal,0.9921,No_Glitch,0.0076,Paired_Doves,0.0003,0.9921,5.67,27.609,141.400,0,4.416e+09,data/demo/img/0163.pgm
+164,event,GW231123_135430,L1,real_signal,train,real_signal,0.9998,No_Glitch,0.0001,Paired_Doves,0.0001,0.9998,6.35,38.403,141.400,0,4.416e+09,data/demo/img/0164.pgm
+165,event,GW231206_233134,H1,real_signal,train,real_signal,0.9952,No_Glitch,0.0048,Helix,0.0000,0.9952,5.20,1.132,41.888,0,5.482e+09,data/demo/img/0165.pgm
+166,event,GW231206_233134,L1,real_signal,train,real_signal,0.9995,No_Glitch,0.0004,Helix,0.0001,0.9995,5.54,0.995,41.888,0,5.482e+09,data/demo/img/0166.pgm
+167,event,GW231206_233901,H1,real_signal,val,real_signal,0.9997,Helix,0.0002,No_Glitch,0.0001,0.9997,5.22,5.883,36.096,0,3.334e+09,data/demo/img/0167.pgm
+168,event,GW231206_233901,L1,real_signal,val,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.14,28.450,36.096,0,3.334e+09,data/demo/img/0168.pgm
+169,event,GW231213_111417,H1,real_signal,val,real_signal,0.9964,No_Glitch,0.0036,Helix,0.0000,0.9964,5.30,1.287,44.055,0,6.197e+09,data/demo/img/0169.pgm
+170,event,GW231213_111417,L1,real_signal,val,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,5.30,28.450,44.055,0,6.197e+09,data/demo/img/0170.pgm
+171,event,GW231221_135041,H1,real_signal,test,real_signal,0.9479,No_Glitch,0.0518,Helix,0.0001,0.9479,5.46,1.561,53.320,0,6.605e+09,data/demo/img/0171.pgm
+172,event,GW231221_135041,L1,real_signal,test,real_signal,0.9973,No_Glitch,0.0027,Helix,0.0000,0.9973,5.27,0.841,53.320,0,6.605e+09,data/demo/img/0172.pgm
+173,event,GW231223_032836,H1,real_signal,test,real_signal,0.9896,No_Glitch,0.0103,Helix,0.0000,0.9896,6.05,11.567,53.273,0,6.317e+09,data/demo/img/0173.pgm
+174,event,GW231223_032836,L1,real_signal,test,real_signal,0.8671,No_Glitch,0.1324,Scattered_Light,0.0003,0.8671,5.44,9.987,53.273,0,6.317e+09,data/demo/img/0174.pgm
+175,event,GW231223_202619,H1,real_signal,train,real_signal,0.9909,No_Glitch,0.0091,None_of_the_Above,0.0000,0.9909,8.25,9.987,9.853,1,2.29e+09,data/demo/img/0175.pgm
+176,event,GW231224_024321,H1,real_signal,train,real_signal,0.9111,No_Glitch,0.0882,Helix,0.0002,0.9111,6.87,8.643,8.485,1,2.401e+09,data/demo/img/0176.pgm
+177,event,GW231224_024321,L1,real_signal,train,real_signal,0.9948,No_Glitch,0.0052,Helix,0.0000,0.9948,7.37,8.292,8.485,1,2.401e+09,data/demo/img/0177.pgm
+178,event,GW231226_101520,H1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,11.20,38.403,39.975,1,2.83e+09,data/demo/img/0178.pgm
+179,event,GW231226_101520,L1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,11.83,40.778,39.975,1,2.83e+09,data/demo/img/0179.pgm
+180,event,GW231231_120147,H1,real_signal,val,real_signal,0.9964,No_Glitch,0.0035,Paired_Doves,0.0000,0.9964,nan,nan,nan,0,nan,data/demo/img/0180.pgm
+181,event,GW231231_120147,L1,real_signal,val,No_Glitch,0.6575,real_signal,0.3422,1080Lines,0.0001,0.3422,nan,nan,nan,0,nan,data/demo/img/0181.pgm
+182,event,GW231231_154016,H1,real_signal,train,real_signal,1.0000,Helix,0.0000,No_Glitch,0.0000,1.0000,8.73,21.718,20.691,1,2.618e+09,data/demo/img/0182.pgm
+183,event,GW240104_164932,H1,real_signal,train,real_signal,0.9995,No_Glitch,0.0005,Helix,0.0000,0.9995,6.57,23.061,42.930,1,3.986e+09,data/demo/img/0183.pgm
+184,event,GW240105_151143,H1,real_signal,train,real_signal,0.9925,Repeating_Blips,0.0038,No_Glitch,0.0019,0.9925,nan,nan,nan,0,nan,data/demo/img/0184.pgm
+185,event,GW240109_050431,H1,real_signal,test,real_signal,0.9999,No_Glitch,0.0000,Helix,0.0000,0.9999,5.44,26.793,25.216,0,3.334e+09,data/demo/img/0185.pgm
+186,event,GW240406_062847,H1,real_signal,val,real_signal,0.9978,No_Glitch,0.0020,Helix,0.0001,0.9978,nan,nan,nan,0,nan,data/demo/img/0186.pgm
+187,event,GW240406_062847,L1,real_signal,val,real_signal,0.9845,No_Glitch,0.0155,Helix,0.0000,0.9845,nan,nan,nan,0,nan,data/demo/img/0187.pgm
+188,event,GW240413_022019,H1,real_signal,train,real_signal,0.9907,No_Glitch,0.0093,None_of_the_Above,0.0000,0.9907,7.11,6.409,6.429,1,1.591e+09,data/demo/img/0188.pgm
+189,event,GW240413_022019,L1,real_signal,train,real_signal,0.9994,No_Glitch,0.0006,Helix,0.0000,0.9994,7.21,6.326,6.429,1,1.591e+09,data/demo/img/0189.pgm
+190,event,GW240420_175625,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.01,28.450,33.839,0,4.161e+09,data/demo/img/0190.pgm
+191,event,GW240426_031451,H1,real_signal,val,real_signal,0.8721,No_Glitch,0.1278,Scattered_Light,0.0001,0.8721,4.91,0.949,61.215,0,6.197e+09,data/demo/img/0191.pgm
+192,event,GW240426_031451,L1,real_signal,val,real_signal,0.9990,No_Glitch,0.0010,Blip,0.0000,0.9990,5.72,1.348,61.215,0,6.197e+09,data/demo/img/0192.pgm
+193,event,GW240428_225440,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,11.11,17.604,17.222,1,2.177e+09,data/demo/img/0193.pgm
+194,event,GW240501_033534,H1,real_signal,train,real_signal,0.9932,No_Glitch,0.0067,Blip,0.0001,0.9932,5.10,1.028,48.720,0,6.715e+09,data/demo/img/0194.pgm
+195,event,GW240501_033534,L1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,5.51,0.848,48.720,0,6.715e+09,data/demo/img/0195.pgm
+196,event,GW240507_041632,H1,real_signal,val,real_signal,0.9233,No_Glitch,0.0767,Scattered_Light,0.0000,0.9233,5.32,3.521,17.664,0,3.334e+09,data/demo/img/0196.pgm
+197,event,GW240507_041632,L1,real_signal,val,real_signal,0.9991,No_Glitch,0.0006,Helix,0.0003,0.9991,6.18,19.262,17.664,0,3.334e+09,data/demo/img/0197.pgm
+198,event,GW240511_031507,H1,real_signal,train,real_signal,0.9760,No_Glitch,0.0240,Helix,0.0000,0.9760,5.20,1.231,42.296,0,4.074e+09,data/demo/img/0198.pgm
+199,event,GW240511_031507,L1,real_signal,train,real_signal,0.9998,No_Glitch,0.0001,Helix,0.0001,0.9998,6.17,43.299,42.296,0,4.074e+09,data/demo/img/0199.pgm
+200,event,GW240512_024139,H1,real_signal,test,No_Glitch,0.9229,real_signal,0.0767,Scattered_Light,0.0001,0.0767,5.44,10.571,10.603,0,2.83e+09,data/demo/img/0200.pgm
+201,event,GW240512_024139,L1,real_signal,test,real_signal,0.9743,No_Glitch,0.0257,Helix,0.0000,0.9743,6.14,10.571,10.603,0,2.83e+09,data/demo/img/0201.pgm
+202,event,GW240513_183302,H1,real_signal,train,real_signal,0.9996,Helix,0.0003,No_Glitch,0.0001,0.9996,5.75,5.201,24.360,0,4.416e+09,data/demo/img/0202.pgm
+203,event,GW240513_183302,L1,real_signal,train,real_signal,0.9998,No_Glitch,0.0001,Helix,0.0000,0.9998,5.64,24.487,24.360,0,4.416e+09,data/demo/img/0203.pgm
+204,event,GW240514_121713,H1,real_signal,train,real_signal,1.0000,Helix,0.0000,No_Glitch,0.0000,1.0000,5.46,39.572,51.330,0,4.819e+09,data/demo/img/0204.pgm
+205,event,GW240514_121713,L1,real_signal,train,real_signal,0.9973,Helix,0.0026,No_Glitch,0.0002,0.9973,5.00,2.631,51.330,0,4.819e+09,data/demo/img/0205.pgm
+206,event,GW240515_005301,H1,real_signal,train,real_signal,0.9673,No_Glitch,0.0327,None_of_the_Above,0.0000,0.9673,5.51,0.920,36.512,0,6.074e+09,data/demo/img/0206.pgm
+207,event,GW240515_005301,L1,real_signal,train,real_signal,1.0000,Helix,0.0000,No_Glitch,0.0000,1.0000,5.39,4.520,36.512,0,6.074e+09,data/demo/img/0207.pgm
+208,event,GW240519_012815,L1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,5.51,28.450,56.892,0,3.714e+09,data/demo/img/0208.pgm
+209,event,GW240520_213616,H1,real_signal,val,real_signal,0.8976,No_Glitch,0.1023,None_of_the_Above,0.0000,0.8976,6.71,10.893,10.516,1,3.236e+09,data/demo/img/0209.pgm
+210,event,GW240520_213616,L1,real_signal,val,real_signal,0.9761,No_Glitch,0.0235,Helix,0.0003,0.9761,6.94,10.571,10.516,1,3.236e+09,data/demo/img/0210.pgm
+211,event,GW240527_183429,H1,real_signal,test,real_signal,0.9994,No_Glitch,0.0006,Helix,0.0000,0.9994,5.12,1.009,67.620,0,7.775e+09,data/demo/img/0211.pgm
+212,event,GW240527_183429,L1,real_signal,test,real_signal,0.9918,No_Glitch,0.0082,None_of_the_Above,0.0000,0.9918,5.27,1.795,67.620,0,7.775e+09,data/demo/img/0212.pgm
+213,event,GW240527_230910,H1,real_signal,val,real_signal,0.9980,No_Glitch,0.0020,Helix,0.0000,0.9980,6.16,19.849,17.306,0,2.83e+09,data/demo/img/0213.pgm
+214,event,GW240527_230910,L1,real_signal,val,real_signal,0.9696,No_Glitch,0.0304,Helix,0.0000,0.9696,5.41,1.304,17.306,0,2.83e+09,data/demo/img/0214.pgm
+215,event,GW240530_012417,H1,real_signal,test,real_signal,0.9636,No_Glitch,0.0364,Helix,0.0000,0.9636,5.53,1.355,11.112,0,2.51e+09,data/demo/img/0215.pgm
+216,event,GW240530_012417,L1,real_signal,test,real_signal,0.9994,No_Glitch,0.0006,Helix,0.0000,0.9994,7.92,11.225,11.112,1,2.51e+09,data/demo/img/0216.pgm
+217,event,GW240601_061200,H1,real_signal,train,real_signal,0.9849,No_Glitch,0.0150,Helix,0.0000,0.9849,5.24,1.732,63.187,0,6.98e+09,data/demo/img/0217.pgm
+218,event,GW240601_061200,L1,real_signal,train,real_signal,0.9996,No_Glitch,0.0004,Helix,0.0000,0.9996,5.51,1.583,63.187,0,6.98e+09,data/demo/img/0218.pgm
+219,event,GW240601_231004,H1,real_signal,train,real_signal,0.9637,No_Glitch,0.0363,None_of_the_Above,0.0000,0.9637,5.05,9.725,9.750,0,3.036e+09,data/demo/img/0219.pgm
+220,event,GW240601_231004,L1,real_signal,train,real_signal,0.9890,No_Glitch,0.0110,Helix,0.0000,0.9890,7.48,9.725,9.750,1,3.036e+09,data/demo/img/0220.pgm
+221,event,GW240615_113620,H1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,8.14,34.060,33.411,1,3.431e+09,data/demo/img/0221.pgm
+222,event,GW240615_113620,L1,real_signal,test,real_signal,1.0000,No_Glitch,0.0000,Paired_Doves,0.0000,1.0000,12.71,36.166,33.411,1,3.431e+09,data/demo/img/0222.pgm
+223,event,GW240615_160735,H1,real_signal,train,real_signal,0.9796,No_Glitch,0.0202,Helix,0.0002,0.9796,5.83,0.884,33.660,0,6.197e+09,data/demo/img/0223.pgm
+224,event,GW240615_160735,L1,real_signal,train,real_signal,0.9988,No_Glitch,0.0012,Helix,0.0000,0.9988,5.57,1.422,33.660,0,6.197e+09,data/demo/img/0224.pgm
+225,event,GW240621_195059,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,10.80,37.268,34.932,1,2.83e+09,data/demo/img/0225.pgm
+226,event,GW240621_195059,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,7.75,38.403,34.932,1,2.83e+09,data/demo/img/0226.pgm
+227,event,GW240621_200935,H1,real_signal,train,real_signal,0.9847,No_Glitch,0.0148,None_of_the_Above,0.0005,0.9847,5.11,1.438,54.425,0,6.769e+09,data/demo/img/0227.pgm
+228,event,GW240621_200935,L1,real_signal,train,real_signal,0.9693,No_Glitch,0.0307,None_of_the_Above,0.0000,0.9693,5.12,47.377,54.425,0,6.769e+09,data/demo/img/0228.pgm
+229,event,GW240625_073331,H1,real_signal,test,real_signal,0.8831,Blip,0.1090,Repeating_Blips,0.0041,0.8831,nan,nan,nan,0,nan,data/demo/img/0229.pgm
+230,event,GW240625_073331,L1,real_signal,test,real_signal,0.9952,No_Glitch,0.0048,Helix,0.0000,0.9952,nan,nan,nan,0,nan,data/demo/img/0230.pgm
+231,event,GW240629_145256,H1,real_signal,train,real_signal,0.9957,No_Glitch,0.0043,None_of_the_Above,0.0000,0.9957,5.48,1.212,10.012,0,3.036e+09,data/demo/img/0231.pgm
+232,event,GW240629_145256,L1,real_signal,train,real_signal,0.9584,No_Glitch,0.0414,Helix,0.0001,0.9584,7.47,9.987,10.012,1,3.036e+09,data/demo/img/0232.pgm
+233,event,GW240630_101703,H1,real_signal,train,real_signal,0.9803,No_Glitch,0.0143,Helix,0.0054,0.9803,5.54,1.076,32.956,0,5.482e+09,data/demo/img/0233.pgm
+234,event,GW240630_101703,L1,real_signal,train,real_signal,0.9139,No_Glitch,0.0857,Scratchy,0.0002,0.9139,5.48,1.077,32.956,0,5.482e+09,data/demo/img/0234.pgm
+235,event,GW240701_013826,H1,real_signal,train,real_signal,0.9862,No_Glitch,0.0138,None_of_the_Above,0.0000,0.9862,nan,nan,nan,0,nan,data/demo/img/0235.pgm
+236,event,GW240701_013826,L1,real_signal,train,real_signal,0.9336,No_Glitch,0.0659,Paired_Doves,0.0003,0.9336,nan,nan,nan,0,nan,data/demo/img/0236.pgm
+237,event,GW240703_191355,L1,real_signal,test,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,6.70,34.060,35.108,1,3.897e+09,data/demo/img/0237.pgm
+238,event,GW240705_053215,H1,real_signal,test,real_signal,0.9995,No_Glitch,0.0005,Helix,0.0000,0.9995,5.20,1.025,56.189,0,5.948e+09,data/demo/img/0238.pgm
+239,event,GW240705_053215,L1,real_signal,test,real_signal,0.9998,No_Glitch,0.0001,Helix,0.0000,0.9998,5.40,1.017,56.189,0,5.948e+09,data/demo/img/0239.pgm
+240,event,GW240716_034900,L1,real_signal,test,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,5.66,3.101,37.654,0,3.897e+09,data/demo/img/0240.pgm
+241,event,GW240825_055146,H1,real_signal,train,real_signal,0.9755,No_Glitch,0.0245,Helix,0.0000,0.9755,6.44,10.893,10.875,1,2.934e+09,data/demo/img/0241.pgm
+242,event,GW240825_055146,L1,real_signal,train,real_signal,0.8317,No_Glitch,0.1673,Scratchy,0.0009,0.8317,6.12,10.893,10.875,0,2.934e+09,data/demo/img/0242.pgm
+243,event,GW240830_211120,H1,real_signal,train,real_signal,0.9998,No_Glitch,0.0002,Helix,0.0000,0.9998,6.03,10.268,10.163,0,2.725e+09,data/demo/img/0243.pgm
+244,event,GW240830_211120,L1,real_signal,train,real_signal,0.9944,No_Glitch,0.0056,Scratchy,0.0000,0.9944,6.10,9.987,10.163,0,2.725e+09,data/demo/img/0244.pgm
+245,event,GW240902_143306,H1,real_signal,train,real_signal,0.9997,No_Glitch,0.0002,Helix,0.0001,0.9997,5.90,26.001,27.118,0,5.123e+09,data/demo/img/0245.pgm
+246,event,GW240902_143306,L1,real_signal,train,real_signal,0.7535,No_Glitch,0.2459,Helix,0.0003,0.7535,5.81,3.301,27.118,0,5.123e+09,data/demo/img/0246.pgm
+247,event,GW240907_153833,H1,real_signal,train,No_Glitch,0.5126,real_signal,0.4867,None_of_the_Above,0.0003,0.4867,5.42,1.026,48.393,0,6.549e+09,data/demo/img/0247.pgm
+248,event,GW240907_153833,L1,real_signal,train,real_signal,0.9029,No_Glitch,0.0951,Helix,0.0018,0.9029,5.95,1.056,48.393,0,6.549e+09,data/demo/img/0248.pgm
+249,event,GW240908_082628,H1,real_signal,train,real_signal,0.9771,Blip,0.0104,No_Glitch,0.0077,0.9771,5.61,2.058,43.758,0,5.412e+09,data/demo/img/0249.pgm
+250,event,GW240908_082628,L1,real_signal,train,real_signal,0.5633,No_Glitch,0.4360,None_of_the_Above,0.0003,0.5633,5.43,1.438,43.758,0,5.412e+09,data/demo/img/0250.pgm
+251,event,GW240910_103535,H1,real_signal,val,real_signal,0.9958,No_Glitch,0.0039,Helix,0.0003,0.9958,9.44,8.292,8.234,1,1.948e+09,data/demo/img/0251.pgm
+252,event,GW240910_103535,L1,real_signal,val,No_Glitch,0.5900,real_signal,0.3826,None_of_the_Above,0.0262,0.3826,9.71,8.130,8.234,1,1.948e+09,data/demo/img/0252.pgm
+253,event,GW240915_001357,H1,real_signal,train,real_signal,0.9679,No_Glitch,0.0316,None_of_the_Above,0.0004,0.9679,8.92,9.480,9.381,1,2.29e+09,data/demo/img/0253.pgm
+254,event,GW240915_001357,L1,real_signal,train,real_signal,0.9994,No_Glitch,0.0005,Helix,0.0001,0.9994,9.55,9.036,9.381,1,2.29e+09,data/demo/img/0254.pgm
+255,event,GW240915_105151,H1,real_signal,val,real_signal,0.9993,No_Glitch,0.0006,Helix,0.0001,0.9993,11.59,8.833,9.119,1,1.711e+09,data/demo/img/0255.pgm
+256,event,GW240919_061559,H1,real_signal,val,real_signal,0.9986,No_Glitch,0.0013,Helix,0.0001,0.9986,5.17,1.444,38.860,0,3.897e+09,data/demo/img/0256.pgm
+257,event,GW240919_061559,L1,real_signal,val,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.53,39.572,38.860,0,3.897e+09,data/demo/img/0257.pgm
+258,event,GW240919_215453,H1,real_signal,val,No_Glitch,0.9361,real_signal,0.0630,None_of_the_Above,0.0008,0.0630,nan,nan,nan,0,nan,data/demo/img/0258.pgm
+259,event,GW240919_215453,L1,real_signal,val,real_signal,0.9951,No_Glitch,0.0048,Helix,0.0001,0.9951,nan,nan,nan,0,nan,data/demo/img/0259.pgm
+260,event,GW240920_073424,H1,real_signal,train,real_signal,0.9936,No_Glitch,0.0058,Helix,0.0004,0.9936,6.13,21.076,19.812,0,3.236e+09,data/demo/img/0260.pgm
+261,event,GW240920_073424,L1,real_signal,train,real_signal,0.7966,No_Glitch,0.2032,Paired_Doves,0.0001,0.7966,6.65,21.076,19.812,1,3.236e+09,data/demo/img/0261.pgm
+262,event,GW240920_124024,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Blip,0.0000,1.0000,10.70,36.166,36.058,1,2.618e+09,data/demo/img/0262.pgm
+263,event,GW240920_124024,L1,real_signal,train,real_signal,0.9999,Koi_Fish,0.0001,No_Glitch,0.0000,0.9999,13.71,38.403,36.058,1,2.618e+09,data/demo/img/0263.pgm
+264,event,GW240921_201835,L1,real_signal,train,real_signal,0.9967,No_Glitch,0.0020,Helix,0.0012,0.9967,6.67,18.140,18.432,1,2.29e+09,data/demo/img/0264.pgm
+265,event,GW240922_142106,H1,real_signal,train,real_signal,0.9955,No_Glitch,0.0044,Helix,0.0000,0.9955,5.55,1.315,10.069,0,2.934e+09,data/demo/img/0265.pgm
+266,event,GW240922_142106,L1,real_signal,train,real_signal,0.9791,No_Glitch,0.0196,Helix,0.0011,0.9791,5.67,3.487,10.069,0,2.934e+09,data/demo/img/0266.pgm
+267,event,GW240923_000715,H1,real_signal,train,real_signal,0.9809,No_Glitch,0.0096,Blip,0.0088,0.9809,nan,nan,nan,0,nan,data/demo/img/0267.pgm
+268,event,GW240923_000715,L1,real_signal,train,real_signal,0.5537,No_Glitch,0.4460,None_of_the_Above,0.0003,0.5537,nan,nan,nan,0,nan,data/demo/img/0268.pgm
+269,event,GW240923_204006,H1,real_signal,train,real_signal,0.9649,No_Glitch,0.0342,Helix,0.0007,0.9649,5.45,4.109,56.265,0,6.197e+09,data/demo/img/0269.pgm
+270,event,GW240923_204006,L1,real_signal,train,real_signal,0.9971,No_Glitch,0.0021,Blip,0.0005,0.9971,5.86,6.326,56.265,0,6.197e+09,data/demo/img/0270.pgm
+271,event,GW240924_000316,H1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Paired_Doves,0.0000,0.9999,5.20,2.721,55.062,0,5.948e+09,data/demo/img/0271.pgm
+272,event,GW240924_000316,L1,real_signal,train,real_signal,0.8298,No_Glitch,0.1646,Scratchy,0.0012,0.8298,5.09,3.244,55.062,0,5.948e+09,data/demo/img/0272.pgm
+273,event,GW240925_005809,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,11.97,7.430,7.398,1,1.09e+09,data/demo/img/0273.pgm
+274,event,GW240925_005809,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,9.25,7.191,7.398,1,1.09e+09,data/demo/img/0274.pgm
+275,event,GW240930_035959,H1,real_signal,val,real_signal,0.8753,No_Glitch,0.1223,None_of_the_Above,0.0009,0.8753,6.83,18.693,17.255,1,2.401e+09,data/demo/img/0275.pgm
+276,event,GW240930_035959,L1,real_signal,val,real_signal,0.9989,Helix,0.0008,No_Glitch,0.0003,0.9989,8.55,17.604,17.255,1,2.401e+09,data/demo/img/0276.pgm
+277,event,GW240930_234614,H1,real_signal,test,real_signal,0.6198,No_Glitch,0.3785,None_of_the_Above,0.0011,0.6198,4.99,1.132,38.240,0,5.884e+09,data/demo/img/0277.pgm
+278,event,GW240930_234614,L1,real_signal,test,real_signal,0.9993,Helix,0.0007,No_Glitch,0.0000,0.9993,5.80,1.732,38.240,0,5.884e+09,data/demo/img/0278.pgm
+279,event,GW241002_030559,L1,real_signal,train,real_signal,0.9998,No_Glitch,0.0002,Helix,0.0000,0.9998,6.41,36.166,36.864,0,3.334e+09,data/demo/img/0279.pgm
+280,event,GW241006_015333,H1,real_signal,train,real_signal,0.9988,Helix,0.0009,No_Glitch,0.0003,0.9988,6.17,23.763,25.996,0,3.897e+09,data/demo/img/0280.pgm
+281,event,GW241006_015333,L1,real_signal,train,real_signal,0.9997,No_Glitch,0.0002,Helix,0.0001,0.9997,7.31,26.793,25.996,1,3.897e+09,data/demo/img/0281.pgm
+282,event,GW241009_084816,H1,real_signal,train,real_signal,0.9853,No_Glitch,0.0146,Helix,0.0000,0.9853,5.55,10.893,10.712,0,2.725e+09,data/demo/img/0282.pgm
+283,event,GW241009_084816,L1,real_signal,train,real_signal,0.8763,No_Glitch,0.1231,None_of_the_Above,0.0004,0.8763,6.47,10.893,10.712,1,2.725e+09,data/demo/img/0283.pgm
+284,event,GW241009_220455,H1,real_signal,train,real_signal,0.9234,No_Glitch,0.0765,None_of_the_Above,0.0000,0.9234,5.62,0.906,37.800,0,5.196e+09,data/demo/img/0284.pgm
+285,event,GW241009_220455,L1,real_signal,train,real_signal,0.8425,No_Glitch,0.1558,Scattered_Light,0.0007,0.8425,6.22,2.079,37.800,0,5.196e+09,data/demo/img/0285.pgm
+286,event,GW241011_233834,H1,real_signal,val,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,16.89,9.251,9.545,1,6.961e+08,data/demo/img/0286.pgm
+287,event,GW241101_220523,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.94,33.054,32.804,0,4.332e+09,data/demo/img/0287.pgm
+288,event,GW241102_124058,H1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,10.64,8.462,8.770,1,1.09e+09,data/demo/img/0288.pgm
+289,event,GW241102_124058,L1,real_signal,train,real_signal,0.9998,No_Glitch,0.0001,Helix,0.0000,0.9998,13.05,8.833,8.770,1,1.09e+09,data/demo/img/0289.pgm
+290,event,GW241102_144729,H1,real_signal,val,real_signal,0.9972,No_Glitch,0.0026,Helix,0.0002,0.9972,5.04,4.189,49.455,0,5.686e+09,data/demo/img/0290.pgm
+291,event,GW241102_144729,L1,real_signal,val,real_signal,0.9923,No_Glitch,0.0047,Blip,0.0027,0.9923,5.49,1.014,49.455,0,5.686e+09,data/demo/img/0291.pgm
+292,event,GW241109_005349,H1,real_signal,val,No_Glitch,0.7900,real_signal,0.2099,Paired_Doves,0.0000,0.2099,nan,nan,nan,0,nan,data/demo/img/0292.pgm
+293,event,GW241109_005349,L1,real_signal,val,No_Glitch,0.7692,Low_Frequency_Burst,0.1846,real_signal,0.0298,0.0298,nan,nan,nan,0,nan,data/demo/img/0293.pgm
+294,event,GW241109_033317,L1,real_signal,val,real_signal,0.9983,No_Glitch,0.0015,Blip,0.0002,0.9983,5.24,8.130,45.844,0,4.896e+09,data/demo/img/0294.pgm
+295,event,GW241109_115924,H1,real_signal,train,real_signal,0.9992,No_Glitch,0.0008,Helix,0.0000,0.9992,10.73,5.951,5.925,1,1.591e+09,data/demo/img/0295.pgm
+296,event,GW241110_124123,H1,real_signal,train,real_signal,0.9671,No_Glitch,0.0317,None_of_the_Above,0.0012,0.9671,5.94,13.041,11.316,0,1.948e+09,data/demo/img/0296.pgm
+297,event,GW241110_124123,L1,real_signal,train,real_signal,0.7350,No_Glitch,0.2647,Helix,0.0001,0.7350,5.66,0.899,11.316,0,1.948e+09,data/demo/img/0297.pgm
+298,event,GW241111_111552,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,9.25,26.001,25.155,1,3.431e+09,data/demo/img/0298.pgm
+299,event,GW241111_111552,L1,real_signal,train,real_signal,0.9816,No_Glitch,0.0184,None_of_the_Above,0.0000,0.9816,5.94,4.588,25.155,0,3.431e+09,data/demo/img/0299.pgm
+300,event,GW241113_163507,L1,real_signal,train,real_signal,0.9633,No_Glitch,0.0353,Paired_Doves,0.0011,0.9633,10.36,17.084,18.144,1,3.137e+09,data/demo/img/0300.pgm
+301,event,GW241114_024711,H1,real_signal,train,real_signal,0.9927,No_Glitch,0.0066,Blip,0.0004,0.9927,5.75,1.486,42.340,0,4.819e+09,data/demo/img/0301.pgm
+302,event,GW241114_024711,L1,real_signal,train,real_signal,0.9861,No_Glitch,0.0131,Helix,0.0004,0.9861,5.51,1.575,42.340,0,4.819e+09,data/demo/img/0302.pgm
+303,event,GW241114_235258,L1,real_signal,train,real_signal,0.9955,No_Glitch,0.0041,Helix,0.0004,0.9955,11.68,9.480,9.326,1,2.063e+09,data/demo/img/0303.pgm
+304,event,GW241116_151753,H1,real_signal,train,real_signal,0.9907,No_Glitch,0.0090,Helix,0.0003,0.9907,6.20,24.487,63.580,0,7.373e+09,data/demo/img/0304.pgm
+305,event,GW241116_151753,L1,real_signal,train,No_Glitch,0.5237,real_signal,0.4754,None_of_the_Above,0.0008,0.4754,5.37,1.377,63.580,0,7.373e+09,data/demo/img/0305.pgm
+306,event,GW241125_010116,H1,real_signal,train,real_signal,0.9963,No_Glitch,0.0037,Paired_Doves,0.0000,0.9963,5.52,2.840,78.300,0,6.715e+09,data/demo/img/0306.pgm
+307,event,GW241125_010116,L1,real_signal,train,real_signal,0.9882,No_Glitch,0.0109,Paired_Doves,0.0006,0.9882,5.75,58.448,78.300,0,6.715e+09,data/demo/img/0307.pgm
+308,event,GW241127_061008,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,10.81,39.572,37.268,1,2.618e+09,data/demo/img/0308.pgm
+309,event,GW241127_061008,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,10.25,38.403,37.268,1,2.618e+09,data/demo/img/0309.pgm
+310,event,GW241129_021832,H1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,6.37,24.487,32.915,0,4.819e+09,data/demo/img/0310.pgm
+311,event,GW241129_021832,L1,real_signal,train,real_signal,0.9995,Helix,0.0003,No_Glitch,0.0002,0.9995,6.45,32.077,32.915,1,4.819e+09,data/demo/img/0311.pgm
+312,event,GW241130_034908,H1,real_signal,val,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.04,33.054,31.688,0,4.074e+09,data/demo/img/0312.pgm
+313,event,GW241130_034908,L1,real_signal,val,No_Glitch,0.5782,real_signal,0.4216,Paired_Doves,0.0000,0.4216,5.43,3.360,31.688,0,4.074e+09,data/demo/img/0313.pgm
+314,event,GW241130_110422,H1,real_signal,train,real_signal,0.8793,No_Glitch,0.1207,Paired_Doves,0.0000,0.8793,6.40,8.833,9.137,0,3.036e+09,data/demo/img/0314.pgm
+315,event,GW241130_110422,L1,real_signal,train,real_signal,0.9781,No_Glitch,0.0219,None_of_the_Above,0.0000,0.9781,5.62,1.538,9.137,0,3.036e+09,data/demo/img/0315.pgm
+316,event,GW241210_060606,H1,real_signal,train,real_signal,0.9990,No_Glitch,0.0010,Helix,0.0000,0.9990,5.62,2.748,30.885,0,4.819e+09,data/demo/img/0316.pgm
+317,event,GW241210_060606,L1,real_signal,train,real_signal,0.8588,No_Glitch,0.1407,Helix,0.0002,0.8588,5.30,0.994,30.885,0,4.819e+09,data/demo/img/0317.pgm
+318,event,GW241225_042553,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,12.17,9.725,9.861,1,1.83e+09,data/demo/img/0318.pgm
+319,event,GW241225_082815,H1,real_signal,val,real_signal,0.9998,No_Glitch,0.0002,Helix,0.0000,0.9998,6.02,25.232,56.012,0,3.897e+09,data/demo/img/0319.pgm
+320,event,GW241225_082815,L1,real_signal,val,real_signal,0.9997,No_Glitch,0.0002,Helix,0.0001,0.9997,5.67,29.316,56.012,0,3.897e+09,data/demo/img/0320.pgm
+321,event,GW241230_084504,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,5.16,40.778,48.600,0,5.196e+09,data/demo/img/0321.pgm
+322,event,GW241230_233618,H1,real_signal,train,real_signal,0.9438,No_Glitch,0.0560,Low_Frequency_Lines,0.0000,0.9438,5.02,0.909,72.471,0,4.973e+09,data/demo/img/0322.pgm
+323,event,GW241230_233618,L1,real_signal,train,real_signal,0.9996,No_Glitch,0.0004,Helix,0.0000,0.9996,5.50,2.921,72.471,0,4.973e+09,data/demo/img/0323.pgm
+324,event,GW241231_054133,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,10.55,9.480,9.534,1,2.29e+09,data/demo/img/0324.pgm
+325,event,GW241231_054133,L1,real_signal,train,real_signal,0.9959,No_Glitch,0.0041,Paired_Doves,0.0000,0.9959,9.76,9.725,9.534,1,2.29e+09,data/demo/img/0325.pgm
+326,event,GW250104_015122,H1,real_signal,test,real_signal,0.9787,No_Glitch,0.0209,Helix,0.0003,0.9787,5.40,2.376,59.664,0,6.823e+09,data/demo/img/0326.pgm
+327,event,GW250104_015122,L1,real_signal,test,real_signal,0.9998,No_Glitch,0.0002,Helix,0.0000,0.9998,5.21,7.308,59.664,0,6.823e+09,data/demo/img/0327.pgm
+328,event,GW250108_152221,H1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,5.19,1.229,61.288,0,6.074e+09,data/demo/img/0328.pgm
+329,event,GW250108_152221,L1,real_signal,train,real_signal,0.9827,No_Glitch,0.0172,Paired_Doves,0.0000,0.9827,5.67,12.656,61.288,0,6.074e+09,data/demo/img/0329.pgm
+330,event,GW250109_010541,H1,real_signal,train,real_signal,0.9946,No_Glitch,0.0054,Helix,0.0000,0.9946,5.64,3.985,42.744,0,5.619e+09,data/demo/img/0330.pgm
+331,event,GW250109_010541,L1,real_signal,train,real_signal,0.9999,No_Glitch,0.0001,Helix,0.0000,0.9999,5.67,1.231,42.744,0,5.619e+09,data/demo/img/0331.pgm
+332,event,GW250109_074552,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,6.92,29.316,41.736,1,4.499e+09,data/demo/img/0332.pgm
+333,event,GW250109_083206,H1,real_signal,train,real_signal,0.9994,No_Glitch,0.0005,Helix,0.0000,0.9994,nan,nan,nan,0,nan,data/demo/img/0333.pgm
+334,event,GW250114_082203,H1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Helix,0.0000,1.0000,23.84,34.060,31.294,1,1.218e+09,data/demo/img/0334.pgm
+335,event,GW250114_082203,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Paired_Doves,0.0000,1.0000,33.23,33.054,31.294,1,1.218e+09,data/demo/img/0335.pgm
+336,event,GW250118_055802,H1,real_signal,train,real_signal,0.9992,No_Glitch,0.0008,Helix,0.0000,0.9992,6.39,8.833,8.758,0,2.401e+09,data/demo/img/0336.pgm
+337,event,GW250118_055802,L1,real_signal,train,real_signal,0.8443,No_Glitch,0.1540,None_of_the_Above,0.0013,0.8443,5.31,2.419,8.758,0,2.401e+09,data/demo/img/0337.pgm
+338,event,GW250118_170523,H1,real_signal,train,real_signal,0.9995,No_Glitch,0.0004,Helix,0.0001,0.9995,5.78,15.152,39.150,0,3.986e+09,data/demo/img/0338.pgm
+339,event,GW250118_170523,L1,real_signal,train,real_signal,0.9972,No_Glitch,0.0022,Helix,0.0006,0.9972,5.80,25.232,39.150,0,3.986e+09,data/demo/img/0339.pgm
+340,event,GW250119_025138,H1,real_signal,train,real_signal,0.9993,No_Glitch,0.0005,Helix,0.0001,0.9993,6.48,35.098,39.064,1,5.341e+09,data/demo/img/0340.pgm
+341,event,GW250119_025138,L1,real_signal,train,real_signal,0.9986,No_Glitch,0.0011,Helix,0.0004,0.9986,5.65,1.886,39.064,0,5.341e+09,data/demo/img/0341.pgm
+342,event,GW250119_190238,H1,real_signal,train,real_signal,0.9821,No_Glitch,0.0178,Paired_Doves,0.0001,0.9821,9.33,9.725,10.037,1,9.608e+08,data/demo/img/0342.pgm
+343,event,GW250119_190238,L1,real_signal,train,real_signal,0.9996,No_Glitch,0.0003,Helix,0.0000,0.9996,10.17,9.987,10.037,1,9.608e+08,data/demo/img/0343.pgm
+344,event,GW250207_115645,L1,real_signal,train,real_signal,1.0000,No_Glitch,0.0000,Paired_Doves,0.0000,1.0000,24.63,31.129,29.713,1,5.609e+08,data/demo/img/0344.pgm
+345,glitch,1080Lines (0vNoxvfzdg),,1080Lines,test,1080Lines,0.9998,Wandering_Line,0.0002,No_Glitch,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0345.pgm
+346,glitch,1080Lines (2ld6uDTOy2),,1080Lines,test,1080Lines,1.0000,Wandering_Line,0.0000,Violin_Mode,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0346.pgm
+347,glitch,1080Lines (3pBwCACTmh),,1080Lines,test,1080Lines,1.0000,Wandering_Line,0.0000,Violin_Mode,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0347.pgm
+348,glitch,1400Ripples (1FINsfQz2i),,1400Ripples,test,1400Ripples,0.9765,Violin_Mode,0.0111,1080Lines,0.0063,0.0000,nan,nan,nan,0,nan,data/demo/img/0348.pgm
+349,glitch,1400Ripples (1gNsJpMqca),,1400Ripples,test,1400Ripples,0.9925,Violin_Mode,0.0033,Whistle,0.0017,0.0000,nan,nan,nan,0,nan,data/demo/img/0349.pgm
+350,glitch,1400Ripples (46iYqH4Cij),,1400Ripples,test,1400Ripples,0.9993,Power_Line,0.0002,Violin_Mode,0.0002,0.0000,nan,nan,nan,0,nan,data/demo/img/0350.pgm
+351,glitch,Air Compressor (6dm2tquJFb),,Air_Compressor,test,Air_Compressor,1.0000,Scattered_Light,0.0000,Low_Frequency_Burst,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0351.pgm
+352,glitch,Air Compressor (Ghlhf10NuA),,Air_Compressor,test,Air_Compressor,0.9999,Scattered_Light,0.0000,Paired_Doves,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0352.pgm
+353,glitch,Air Compressor (Lkno2KhVEd),,Air_Compressor,test,Air_Compressor,0.9994,Low_Frequency_Burst,0.0002,Scattered_Light,0.0001,0.0000,nan,nan,nan,0,nan,data/demo/img/0353.pgm
+354,glitch,Blip (017BiNepgE),,Blip,test,Blip,0.9910,real_signal,0.0060,Repeating_Blips,0.0016,0.0060,nan,nan,nan,0,nan,data/demo/img/0354.pgm
+355,glitch,Blip (05MqkKY6Rk),,Blip,test,Blip,0.9948,Repeating_Blips,0.0048,Koi_Fish,0.0002,0.0000,nan,nan,nan,0,nan,data/demo/img/0355.pgm
+356,glitch,Blip (0TnZj6skbc),,Blip,test,Blip,0.9955,Repeating_Blips,0.0037,Koi_Fish,0.0004,0.0000,nan,nan,nan,0,nan,data/demo/img/0356.pgm
+357,glitch,Extremely Loud (1hecehJMjw),,Extremely_Loud,test,Extremely_Loud,0.9999,Koi_Fish,0.0001,No_Glitch,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0357.pgm
+358,glitch,Extremely Loud (21C2PBwZqo),,Extremely_Loud,test,Extremely_Loud,0.9992,None_of_the_Above,0.0004,Koi_Fish,0.0003,0.0000,nan,nan,nan,0,nan,data/demo/img/0358.pgm
+359,glitch,Extremely Loud (2LU2xm3mtQ),,Extremely_Loud,test,Extremely_Loud,1.0000,Koi_Fish,0.0000,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0359.pgm
+360,glitch,Helix (1lQf49M81I),,Helix,test,Helix,1.0000,None_of_the_Above,0.0000,Whistle,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0360.pgm
+361,glitch,Helix (2wmDTF2s1c),,Helix,test,Helix,1.0000,Whistle,0.0000,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0361.pgm
+362,glitch,Helix (31vHGaKGWi),,Helix,test,Helix,1.0000,real_signal,0.0000,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0362.pgm
+363,glitch,Koi Fish (0LVAL3fxO6),,Koi_Fish,test,Koi_Fish,1.0000,None_of_the_Above,0.0000,Light_Modulation,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0363.pgm
+364,glitch,Koi Fish (1fgJRveZ7B),,Koi_Fish,test,Koi_Fish,1.0000,Light_Modulation,0.0000,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0364.pgm
+365,glitch,Koi Fish (2DuK92ETGG),,Koi_Fish,test,Koi_Fish,0.9999,None_of_the_Above,0.0001,Light_Modulation,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0365.pgm
+366,glitch,Light Modulation (0IlDtspy9k),,Light_Modulation,test,Light_Modulation,0.9566,Blip,0.0358,Low_Frequency_Burst,0.0031,0.0012,nan,nan,nan,0,nan,data/demo/img/0366.pgm
+367,glitch,Light Modulation (0nox4AiRQL),,Light_Modulation,test,Light_Modulation,1.0000,Low_Frequency_Burst,0.0000,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0367.pgm
+368,glitch,Light Modulation (0zxRVjWedM),,Light_Modulation,test,Light_Modulation,0.8581,Tomte,0.0839,Koi_Fish,0.0447,0.0004,nan,nan,nan,0,nan,data/demo/img/0368.pgm
+369,glitch,Low Frequency Burst (1wP9bPRtHi),,Low_Frequency_Burst,test,Low_Frequency_Burst,0.9997,Light_Modulation,0.0001,None_of_the_Above,0.0001,0.0000,nan,nan,nan,0,nan,data/demo/img/0369.pgm
+370,glitch,Low Frequency Burst (1xwcLoTwq3),,Low_Frequency_Burst,test,Low_Frequency_Burst,0.9998,Light_Modulation,0.0001,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0370.pgm
+371,glitch,Low Frequency Burst (24cwsRabNt),,Low_Frequency_Burst,test,Low_Frequency_Burst,0.9990,Light_Modulation,0.0009,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0371.pgm
+372,glitch,Low Frequency Lines (0dV02ujKoO),,Low_Frequency_Lines,test,Low_Frequency_Lines,0.9999,No_Glitch,0.0001,Whistle,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0372.pgm
+373,glitch,Low Frequency Lines (0tsGCRulxU),,Low_Frequency_Lines,test,Low_Frequency_Lines,0.9979,Low_Frequency_Burst,0.0018,Scattered_Light,0.0001,0.0000,nan,nan,nan,0,nan,data/demo/img/0373.pgm
+374,glitch,Low Frequency Lines (0w69sXgCgB),,Low_Frequency_Lines,test,Scattered_Light,0.8680,Low_Frequency_Lines,0.0847,None_of_the_Above,0.0175,0.0002,nan,nan,nan,0,nan,data/demo/img/0374.pgm
+375,glitch,No Glitch (03j7aXVJM5),,No_Glitch,test,No_Glitch,0.9859,real_signal,0.0045,None_of_the_Above,0.0037,0.0045,nan,nan,nan,0,nan,data/demo/img/0375.pgm
+376,glitch,No Glitch (38WOPPcYD3),,No_Glitch,test,No_Glitch,0.9979,None_of_the_Above,0.0011,Whistle,0.0004,0.0001,nan,nan,nan,0,nan,data/demo/img/0376.pgm
+377,glitch,No Glitch (5QL4QZfojj),,No_Glitch,test,No_Glitch,0.8861,Low_Frequency_Lines,0.0939,Whistle,0.0109,0.0001,nan,nan,nan,0,nan,data/demo/img/0377.pgm
+378,glitch,None of the Above (0HxLbFX6hr),,None_of_the_Above,test,Koi_Fish,0.9686,Tomte,0.0241,None_of_the_Above,0.0072,0.0000,nan,nan,nan,0,nan,data/demo/img/0378.pgm
+379,glitch,None of the Above (6DWbQovYuR),,None_of_the_Above,test,None_of_the_Above,0.9942,Koi_Fish,0.0049,Paired_Doves,0.0008,0.0000,nan,nan,nan,0,nan,data/demo/img/0379.pgm
+380,glitch,None of the Above (A6SDvFwzgz),,None_of_the_Above,test,None_of_the_Above,0.9960,Koi_Fish,0.0031,Tomte,0.0006,0.0000,nan,nan,nan,0,nan,data/demo/img/0380.pgm
+381,glitch,Paired Doves (C8P6LsjSSV),,Paired_Doves,test,Paired_Doves,0.4595,Low_Frequency_Burst,0.3385,Air_Compressor,0.1876,0.0000,nan,nan,nan,0,nan,data/demo/img/0381.pgm
+382,glitch,Paired Doves (EVEzbxm6Wc),,Paired_Doves,test,Paired_Doves,0.9998,Extremely_Loud,0.0001,Wandering_Line,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0382.pgm
+383,glitch,Paired Doves (P8AnICRswl),,Paired_Doves,test,Paired_Doves,0.9951,None_of_the_Above,0.0048,Air_Compressor,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0383.pgm
+384,glitch,Power Line (1AHTVatozn),,Power_Line,test,Power_Line,0.9984,None_of_the_Above,0.0008,Scattered_Light,0.0003,0.0000,nan,nan,nan,0,nan,data/demo/img/0384.pgm
+385,glitch,Power Line (2l1Y7r2OWI),,Power_Line,test,Power_Line,0.9990,Wandering_Line,0.0003,No_Glitch,0.0002,0.0000,nan,nan,nan,0,nan,data/demo/img/0385.pgm
+386,glitch,Power Line (3PRGPyxpZc),,Power_Line,test,Power_Line,1.0000,None_of_the_Above,0.0000,Wandering_Line,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0386.pgm
+387,glitch,Repeating Blips (12IfV6N9Vv),,Repeating_Blips,test,Blip,0.8990,Repeating_Blips,0.0999,Light_Modulation,0.0005,0.0003,nan,nan,nan,0,nan,data/demo/img/0387.pgm
+388,glitch,Repeating Blips (8CqOxJe1zU),,Repeating_Blips,test,Repeating_Blips,0.9604,Blip,0.0394,Light_Modulation,0.0001,0.0000,nan,nan,nan,0,nan,data/demo/img/0388.pgm
+389,glitch,Repeating Blips (AxCE7ooqbV),,Repeating_Blips,test,Repeating_Blips,0.9973,Koi_Fish,0.0022,Light_Modulation,0.0003,0.0000,nan,nan,nan,0,nan,data/demo/img/0389.pgm
+390,glitch,Scattered Light (00hQ0scbI5),,Scattered_Light,test,Scattered_Light,1.0000,None_of_the_Above,0.0000,No_Glitch,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0390.pgm
+391,glitch,Scattered Light (0SoiwgUTme),,Scattered_Light,test,Scattered_Light,1.0000,No_Glitch,0.0000,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0391.pgm
+392,glitch,Scattered Light (0Ted9bxWAG),,Scattered_Light,test,Scattered_Light,0.9999,None_of_the_Above,0.0000,Air_Compressor,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0392.pgm
+393,glitch,Scratchy (3jqhDQwD4Y),,Scratchy,test,Scratchy,0.9993,Repeating_Blips,0.0004,None_of_the_Above,0.0003,0.0000,nan,nan,nan,0,nan,data/demo/img/0393.pgm
+394,glitch,Scratchy (5UiULbdwbA),,Scratchy,test,Scratchy,0.9999,None_of_the_Above,0.0001,Repeating_Blips,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0394.pgm
+395,glitch,Scratchy (8DLA4df9oJ),,Scratchy,test,Scratchy,0.9987,None_of_the_Above,0.0007,Repeating_Blips,0.0002,0.0001,nan,nan,nan,0,nan,data/demo/img/0395.pgm
+396,glitch,Tomte (0CnyWmEJpY),,Tomte,test,Tomte,0.9971,None_of_the_Above,0.0018,Koi_Fish,0.0005,0.0001,nan,nan,nan,0,nan,data/demo/img/0396.pgm
+397,glitch,Tomte (2FxSEGMVyM),,Tomte,test,Tomte,0.9966,Blip,0.0019,None_of_the_Above,0.0006,0.0002,nan,nan,nan,0,nan,data/demo/img/0397.pgm
+398,glitch,Tomte (6KoKAElDzM),,Tomte,test,Tomte,0.9989,Blip,0.0009,real_signal,0.0001,0.0001,nan,nan,nan,0,nan,data/demo/img/0398.pgm
+399,glitch,Violin Mode (0SslwUQgjb),,Violin_Mode,test,Violin_Mode,0.8879,1400Ripples,0.1007,Whistle,0.0098,0.0000,nan,nan,nan,0,nan,data/demo/img/0399.pgm
+400,glitch,Violin Mode (0lxNqGby4Q),,Violin_Mode,test,Violin_Mode,1.0000,Wandering_Line,0.0000,No_Glitch,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0400.pgm
+401,glitch,Violin Mode (1EaRU2Bl0N),,Violin_Mode,test,Violin_Mode,0.9999,1080Lines,0.0001,Whistle,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0401.pgm
+402,glitch,Wandering Line (0WXDmnjwFX),,Wandering_Line,test,Wandering_Line,0.9996,None_of_the_Above,0.0003,Repeating_Blips,0.0001,0.0000,nan,nan,nan,0,nan,data/demo/img/0402.pgm
+403,glitch,Wandering Line (C4OfFIsI7h),,Wandering_Line,test,Wandering_Line,0.9995,Extremely_Loud,0.0003,Scratchy,0.0001,0.0000,nan,nan,nan,0,nan,data/demo/img/0403.pgm
+404,glitch,Wandering Line (IE7Kj1RBXU),,Wandering_Line,test,Wandering_Line,0.9981,Violin_Mode,0.0011,Air_Compressor,0.0006,0.0000,nan,nan,nan,0,nan,data/demo/img/0404.pgm
+405,glitch,Whistle (3CfVYVH7Kv),,Whistle,test,Whistle,0.9983,Violin_Mode,0.0008,1400Ripples,0.0004,0.0000,nan,nan,nan,0,nan,data/demo/img/0405.pgm
+406,glitch,Whistle (4f5Zbu8tyv),,Whistle,test,Whistle,1.0000,Wandering_Line,0.0000,None_of_the_Above,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0406.pgm
+407,glitch,Whistle (4n8yq93FHJ),,Whistle,test,Whistle,0.9979,Repeating_Blips,0.0011,Blip,0.0008,0.0000,nan,nan,nan,0,nan,data/demo/img/0407.pgm
+408,glitch,Hardware-injected chirp (EAO19FXb6j),,real_signal,test,real_signal,0.9899,Blip,0.0098,Repeating_Blips,0.0002,0.9899,nan,nan,nan,0,nan,data/demo/img/0408.pgm
+409,glitch,Hardware-injected chirp (atV9MWSkyU),,real_signal,test,real_signal,0.9997,Blip,0.0001,Tomte,0.0001,0.9997,nan,nan,nan,0,nan,data/demo/img/0409.pgm
+410,glitch,Hardware-injected chirp (bJCM1490Ki),,real_signal,test,real_signal,0.9998,Blip,0.0001,Paired_Doves,0.0000,0.9998,nan,nan,nan,0,nan,data/demo/img/0410.pgm
+411,noise,Detector noise (1126259447),,No_Glitch,test,No_Glitch,0.9867,Low_Frequency_Lines,0.0110,real_signal,0.0017,0.0017,nan,nan,nan,0,nan,data/demo/img/0411.pgm
+412,noise,Detector noise (1186741846),,No_Glitch,test,No_Glitch,0.9998,Low_Frequency_Lines,0.0001,real_signal,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0412.pgm
+413,noise,Detector noise (1266618157),,No_Glitch,test,No_Glitch,0.9954,real_signal,0.0032,Power_Line,0.0009,0.0032,nan,nan,nan,0,nan,data/demo/img/0413.pgm
+414,noise,Detector noise (1368449950),,No_Glitch,test,No_Glitch,0.9999,real_signal,0.0001,None_of_the_Above,0.0000,0.0001,nan,nan,nan,0,nan,data/demo/img/0414.pgm
+415,noise,Detector noise (1378725243),,No_Glitch,test,No_Glitch,1.0000,Whistle,0.0000,Low_Frequency_Lines,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0415.pgm
+416,noise,Detector noise (1379594695),,No_Glitch,test,No_Glitch,0.9996,real_signal,0.0003,Whistle,0.0000,0.0003,nan,nan,nan,0,nan,data/demo/img/0416.pgm
+417,noise,Detector noise (1383624202),,No_Glitch,test,No_Glitch,0.9994,real_signal,0.0005,None_of_the_Above,0.0000,0.0005,nan,nan,nan,0,nan,data/demo/img/0417.pgm
+418,noise,Detector noise (1387201843),,No_Glitch,test,No_Glitch,0.9999,Low_Frequency_Lines,0.0000,real_signal,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0418.pgm
+419,noise,Detector noise (1388811873),,No_Glitch,test,No_Glitch,1.0000,real_signal,0.0000,Whistle,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0419.pgm
+420,noise,Detector noise (1400870071),,No_Glitch,test,No_Glitch,0.9997,real_signal,0.0002,Whistle,0.0001,0.0002,nan,nan,nan,0,nan,data/demo/img/0420.pgm
+421,noise,Detector noise (1403336013),,No_Glitch,test,No_Glitch,0.9998,Whistle,0.0002,Low_Frequency_Lines,0.0000,0.0000,nan,nan,nan,0,nan,data/demo/img/0421.pgm
+422,noise,Detector noise (1405136942),,No_Glitch,test,No_Glitch,0.9998,real_signal,0.0001,Whistle,0.0000,0.0001,nan,nan,nan,0,nan,data/demo/img/0422.pgm
+423,false_positive,Noise 6 s after GW200311_115853,H1,No_Glitch,test,real_signal,0.7026,No_Glitch,0.2969,Helix,0.0002,0.7026,nan,nan,nan,0,nan,data/demo/img/0423.pgm
+424,false_positive,Noise 6 s after GW230601_224134,H1,No_Glitch,test,real_signal,0.5525,No_Glitch,0.4462,None_of_the_Above,0.0005,0.5525,nan,nan,nan,0,nan,data/demo/img/0424.pgm
+425,false_positive,Noise 6 s before GW230601_224134,H1,No_Glitch,test,real_signal,0.5632,No_Glitch,0.4334,None_of_the_Above,0.0011,0.5632,nan,nan,nan,0,nan,data/demo/img/0425.pgm
+426,false_positive,Noise 6 s before GW230709_122727,H1,No_Glitch,test,real_signal,0.8239,No_Glitch,0.1693,None_of_the_Above,0.0026,0.8239,nan,nan,nan,0,nan,data/demo/img/0426.pgm
+427,false_positive,Noise 6 s before GW170814,L1,No_Glitch,test,real_signal,0.7538,No_Glitch,0.1660,Blip,0.0391,0.7538,nan,nan,nan,0,nan,data/demo/img/0427.pgm
+428,false_positive,Noise 6 s after GW191230_180458,L1,No_Glitch,test,real_signal,0.6411,No_Glitch,0.3578,None_of_the_Above,0.0007,0.6411,nan,nan,nan,0,nan,data/demo/img/0428.pgm
+429,false_positive,Noise 6 s before GW231223_032836,L1,No_Glitch,test,real_signal,0.7118,No_Glitch,0.2879,Helix,0.0002,0.7118,nan,nan,nan,0,nan,data/demo/img/0429.pgm
+430,false_positive,Noise 6 s after GW231226_101520,L1,No_Glitch,test,real_signal,0.5599,No_Glitch,0.4392,Low_Frequency_Lines,0.0006,0.5599,nan,nan,nan,0,nan,data/demo/img/0430.pgm

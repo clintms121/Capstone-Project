@@ -17,7 +17,7 @@ physically the same morphology as real_signal -- so it's merged into it
 rather than kept as a class the model can only separate by provenance.
 
 Matching layouts wasn't enough on its own: trained on that alone, the model
-called 100% of pure noise run through our Q-scan "real_signal", because our
+called 100% of pure noise run through my Q-scan "real_signal", because my
 pipeline only ever produced real signals. Off-source noise from the same
 strain files (data/processed/noise/) is therefore added as No_Glitch --
 Gravity Spy's own noise-only class -- grouped with its event so a segment's
@@ -43,7 +43,7 @@ class Sample:
     image: np.ndarray  # (H, W) float32 in [0, 1]
     label: str
     group_id: str  # samples sharing a group_id never split across train/val/test
-    source: str  # "qscan" (our pipeline) or "gravityspy"
+    source: str  # "qscan" (my pipeline) or "gravityspy"
 
 
 def prepare_image(image: np.ndarray, size: tuple[int, int]) -> np.ndarray:

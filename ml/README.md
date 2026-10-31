@@ -46,8 +46,8 @@
    - **Shortcut-learning check (keep this in the writeup):** the first full
      training run scored a perfect 65/65 real signals with 0 false alarms --
      and then called 115/115 *pure-noise* images real_signal once that noise
-     was run through our Q-scan. Every image our pipeline produced had been a
-     real signal, so the model learned "our pipeline -> real". Fix:
+     was run through my Q-scan. Every image my pipeline produced had been a
+     real signal, so the model learned "my pipeline -> real". Fix:
      `fetch_all_events.py` also cuts off-source noise from each strain file
      (±6 s and ±12 s from the event; post-merger only for chirp mass < 5,
      whose inspiral is still in band before merger) into
@@ -56,7 +56,7 @@
      so this is checked on every run.
    - Results after the fix (held-out test split, 1,559 images, 22 classes):
      97.9% accuracy, macro-F1 0.96; real_signal recall 0.985, precision
-     0.89; our-pipeline noise called real 8/216, Gravity Spy noise 0/27.
+     0.89; my-pipeline noise called real 8/216, Gravity Spy noise 0/27.
    - `injection_test.py` — the number to quote. Simulated TaylorF2 chirps
      (Mc_det 8-35) injected into held-out detector noise at known SNR,
      rendered with the same Q-scan: caught 5% at SNR 4, 46% at 8, 64% at
@@ -146,13 +146,17 @@ and numpy instead.
   implemented and run end to end. `physics/build_trajectories.py` has
   turned the 76 measurable events into `data/trajectories/` (the
   `(TEST DATA)` rows in `index.csv` are gone).
-- `export_demo.py` writes `data/demo/` for the app's Classifier Demo screen:
-  every real-merger recording plus held-out glitches and noise, each with
-  its Q-scan (PGM), the classifier's top-3 guesses, the matched-filter mass,
-  and whether it was held out; plus the test-split metrics and injection
-  curve. The app replays these results; it doesn't run the models.
-- Next: C++ playback of the trajectory CSVs in
-  `graphics/simulation_screen.cpp` (see `physics/README.md` for the format).
+- `export_demo.py` writes `data/demo/` for the app's Classifier screen:
+  every real-merger recording plus held-out glitches and noise, and the 8
+  held-out noise images the classifier mistook for mergers (false
+  positives), each with its Q-scan (PGM), the classifier's top-3 guesses,
+  the matched-filter mass, and whether it was held out; plus the test-split
+  metrics and injection curve. Mergers also get a light-travel distance
+  (lookback time x c, Planck 2015 cosmology) from GWOSC's published
+  redshift -- one request to the event catalog; 14 newer events have no
+  redshift yet. The app replays these results; it doesn't run the models.
+- The app's merger simulation plays back the trajectory CSVs (a prototype;
+  see `physics/README.md` for the format).
 
 Full pipeline, in order:
 ```

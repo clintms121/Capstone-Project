@@ -11,8 +11,8 @@ regression targets ml/mass_estimation will need.
 
 Also saves off-source noise Q-scans from the same files (seconds away from
 the event) to data/processed/noise/<strain stem>__off<offset>.npy. Without
-them, every image our Q-scan pipeline produced was a real signal, and the
-classifier learned "rendered by our pipeline -> real_signal" instead of
+them, every image my Q-scan pipeline produced was a real signal, and the
+classifier learned "rendered by my pipeline -> real_signal" instead of
 "contains a chirp" (it called 100% of pure noise real). Low-mass systems,
 whose inspiral is still in band seconds before merger, only get post-merger
 noise.

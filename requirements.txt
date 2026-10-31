@@ -8,12 +8,8 @@ certifi
 torch
 tqdm
 
-# gwpy / gwosc: pull in igwn-segments, which needs a C compiler (MSVC on
-# Windows) to build from source -- not installed on this machine as of
-# 2026-09-15 (VS 2022 Community is present but missing the C++ workload;
-# tried gwpy 3.0.14 and 4.0.2, both hit the same wall).
-# ml/preprocessing/spectrogram.py works around this with h5py directly.
-# Install these once "Desktop development with C++" is added to the VS
-# install (or MSVC Build Tools are installed separately).
-gwpy
-gwosc
+# Not needed: the pipeline downloads and reads LIGO data itself with plain
+# HTTP, h5py and numpy. gwpy/gwosc would be the usual tools, but they need a
+# C compiler (MSVC on Windows) to install, so they're left out.
+# gwpy
+# gwosc

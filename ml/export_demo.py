@@ -1,4 +1,4 @@
-"""Export everything the C++ app's Classifier Demo screen shows.
+"""Export everything the C++ app's Classifier screen shows.
 
 The trained models run in Python, so the app reads their results from files
 in formats C++ can parse without extra libraries:
@@ -7,6 +7,7 @@ in formats C++ can parse without extra libraries:
                               it was in, the classifier's top-3 labels and
                               probabilities, and (real mergers) the matched-
                               filter chirp mass next to the published value
+                              and how far away the merger was
     data/demo/img/<id>.pgm    the Q-scan the classifier saw (8-bit grayscale)
     data/demo/metrics.csv     headline numbers on the held-out test split
     data/demo/injection.csv   detection efficiency vs. injected SNR
@@ -14,7 +15,9 @@ in formats C++ can parse without extra libraries:
 Samples: every real-merger recording (marked held out or used in training),
 plus held-out test-split Gravity Spy glitches (up to 3 per class) and
 held-out off-source noise, so the demo shows the classifier on all three
-kinds of input. Run after training, the injection test and mass estimation:
+kinds of input -- and every held-out noise image the classifier mistook for
+a merger (kind "false_positive"). Run after training, the injection test and
+mass estimation:
 
     python -m ml.export_demo
 """
@@ -34,16 +37,23 @@ from ml.classifier.dataset import (
     NOISE_LABEL, REAL_SIGNAL_LABEL, _event_group_id, load_dataset, prepare_image, split_dataset,
 )
 from ml.classifier.model import build_model
+from ml.data.fetch_ligo_strain import list_confident_events
 
 OUT = Path("data/demo")
 MANIFEST = "data/processed/real_signal/real_signal_manifest.csv"
+NOISE_DIR = Path("data/processed/noise")
 MATCHED_FILTER = "data/processed/real_signal/matched_filter.csv"
 BACKGROUND = "data/processed/real_signal/matched_filter_background.csv"
 GLITCHES_PER_CLASS = 3
 NOISE_SAMPLES = 12
 
 FIELDS = ["id", "kind", "name", "detector", "true_label", "split", "pred1", "p1", "pred2", "p2", "pred3", "p3",
-          "p_real", "snr", "mc_est", "mc_pub", "measurable", "image"]
+          "p_real", "snr", "mc_est", "mc_pub", "measurable", "distance_ly", "image"]
+
+# Planck 2015 flat Lambda-CDM, the cosmology LVK catalogs use for redshift.
+H0_KM_S_MPC = 67.74
+OMEGA_M = 0.3075
+HUBBLE_TIME_YR = 977.8e9 / H0_KM_S_MPC  # 1/H0 in years
 
 
 def _write_pgm(image: np.ndarray, path: Path) -> None:
@@ -55,6 +65,29 @@ def _write_pgm(image: np.ndarray, path: Path) -> None:
 def _read_csv(path: str) -> list[dict]:
     with open(path, newline="") as f:
         return list(csv.DictReader(f))
+
+
+def light_travel_distance_ly(z: float) -> float:
+    """How far the waves traveled to reach Earth, in light-years: lookback time
+    to redshift z times c. This is the "1.3 billion light-years" LIGO quotes
+    for GW150914; the luminosity distance in the catalog is larger (440+ Mpc
+    = 1.4+ billion ly) and grows much faster with z.
+    """
+    zs = np.linspace(0.0, z, 2001)
+    return HUBBLE_TIME_YR * np.trapezoid(1.0 / ((1 + zs) * np.sqrt(OMEGA_M * (1 + zs) ** 3 + 1 - OMEGA_M)), zs)
+
+
+def _event_distances_ly() -> dict[str, float]:
+    """Light-travel distance per event name from GWOSC's published redshift
+    (one request to the event catalog). Events without a redshift, or every
+    event if GWOSC can't be reached, are left out and shown without one.
+    """
+    try:
+        events = list_confident_events()
+    except OSError as e:
+        print(f"couldn't reach GWOSC ({e}); exporting without distances")
+        return {}
+    return {e["commonName"]: light_travel_distance_ly(e["redshift"]) for e in events if e["redshift"] is not None}
 
 
 def main() -> None:
@@ -86,8 +119,10 @@ def main() -> None:
     mf = {r["stem"]: r for r in _read_csv(MATCHED_FILTER)}
     threshold = max(float(r["snr"]) for r in _read_csv(BACKGROUND))
 
+    distances = _event_distances_ly()
+    manifest = _read_csv(MANIFEST)
     rows, images = [], []
-    for r in _read_csv(MANIFEST):
+    for r in manifest:
         group = _event_group_id(Path(r["stem"]))
         m = mf.get(r["stem"])
         snr = float(m["snr"]) if m else float("nan")
@@ -97,6 +132,7 @@ def main() -> None:
             "mc_est": float(m["mc_raw"]) if m else float("nan"),
             "mc_pub": float(r["chirp_mass_det_msun"]) if r["chirp_mass_det_msun"] else float("nan"),
             "measurable": int(bool(m) and snr > threshold),
+            "distance_ly": distances.get(r["event"], float("nan")),
         })
         images.append(prepare_image(np.load(f"data/processed/real_signal/{r['stem']}.npy"), size))
 
@@ -113,11 +149,29 @@ def main() -> None:
             name = "Detector noise"
         rows.append({"kind": kind, "name": f"{name} ({s.group_id})", "detector": "", "true_label": s.label,
                      "split": "test", "snr": float("nan"), "mc_est": float("nan"), "mc_pub": float("nan"),
-                     "measurable": 0})
+                     "measurable": 0, "distance_ly": float("nan")})
         images.append(s.image)
 
-    probs = predict(images)
+    # Held-out off-source noise the classifier calls a merger: the false
+    # positives behind the test split's real_signal precision. Loaded straight
+    # from the files (same scaling as the dataset) to keep the offset and event.
     real_idx = classes.index(REAL_SIGNAL_LABEL)
+    event_of = {r["stem"]: r for r in manifest}
+    noise_paths = sorted(p for p in NOISE_DIR.glob("*.npy") if split_of.get(_event_group_id(p)) == "test")
+    noise_images = [prepare_image(np.load(p), size) for p in noise_paths]
+    for path, image, p in zip(noise_paths, noise_images, predict(noise_images)):
+        if p.argmax() != real_idx:
+            continue
+        stem, offset = path.stem.split("__off")
+        event = event_of[stem]
+        when = f"{abs(float(offset)):g} s {'after' if float(offset) > 0 else 'before'}"
+        rows.append({"kind": "false_positive", "name": f"Noise {when} {event['event']}",
+                     "detector": event["detector"], "true_label": NOISE_LABEL, "split": "test",
+                     "snr": float("nan"), "mc_est": float("nan"), "mc_pub": float("nan"), "measurable": 0,
+                     "distance_ly": float("nan")})
+        images.append(image)
+
+    probs = predict(images)
     with open(OUT / "samples.csv", "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=FIELDS)
         writer.writeheader()
@@ -132,6 +186,7 @@ def main() -> None:
                 "pred3": classes[top[2]], "p3": f"{p[top[2]]:.4f}",
                 "p_real": f"{p[real_idx]:.4f}",
                 "snr": f"{row['snr']:.2f}", "mc_est": f"{row['mc_est']:.3f}", "mc_pub": f"{row['mc_pub']:.3f}",
+                "distance_ly": f"{row['distance_ly']:.4g}",
                 "image": image_path.as_posix(),
             })
 

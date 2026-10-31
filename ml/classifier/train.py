@@ -147,13 +147,13 @@ def train(
         f"real_signal vs. glitch on test (best epoch {best['epoch']}):\n"
         f"  recall    {tp / max(is_real.sum(), 1):.3f}  ({tp}/{int(is_real.sum())} real signals caught)\n"
         f"  precision {tp / max(pred_real.sum(), 1):.3f}  ({int(pred_real.sum()) - tp} glitches called real)\n"
-        "called real_signal, by image source -- if our-pipeline noise is called real\n"
+        "called real_signal, by image source -- if my-pipeline noise is called real\n"
         "much more often than Gravity Spy noise, the model is keying on the pipeline:\n"
     )
     for name, label, source in [
-        ("real events (our Q-scan)", REAL_SIGNAL_LABEL, "qscan"),
+        ("real events (my Q-scan)", REAL_SIGNAL_LABEL, "qscan"),
         ("hardware-injected chirps (Gravity Spy)", REAL_SIGNAL_LABEL, "gravityspy"),
-        ("off-source noise (our Q-scan)", NOISE_LABEL, "qscan"),
+        ("off-source noise (my Q-scan)", NOISE_LABEL, "qscan"),
         ("No_Glitch noise (Gravity Spy)", NOISE_LABEL, "gravityspy"),
     ]:
         mask = np.array([s.label == label and s.source == source for s in test_samples])

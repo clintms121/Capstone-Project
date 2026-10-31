@@ -62,6 +62,12 @@ Chirp masses here are detector-frame (see `ml/README.md`).
 
 ## Status
 
-Implemented. The C++ playback of these files (simulation_screen.cpp) is not
-written yet — the screen currently shows the selected event's parameters
-and trajectory path only.
+Implemented. The C++ playback of these files is a first prototype:
+`graphics/trajectory.cpp` reads them, `graphics/merger_scene.cpp` draws the
+3D view, and `graphics/simulation_screen.cpp` runs the playback controls and
+the strain timeline. The renderer also needs the gravitational wave's
+envelope and phase, which it derives from the file at load time rather than
+recomputing any physics: the phase is twice the orbital angle and the
+envelope goes as 1 / separation during the inspiral, and the ringdown's
+frequency and damping time are measured off the `h` column. Together these
+reproduce `h` to within 0.5% of its peak.

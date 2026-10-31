@@ -36,11 +36,20 @@ from scipy import signal
 
 from ml.preprocessing.spectrogram import load_gwosc_strain
 
-T_SUN = 4.925491025543576e-6  # G * M_sun / c^3, seconds
+T_SUN = 4.925491025543576e-6  # G * M_sun / c^3: one solar mass as a time, in seconds
+
+# The search runs in two stages (see matched_filter_masses): every chirp mass
+# at two mass ratios first, then the best one's neighbors at all of these.
 STAGE1_Q = np.array([1.0, 0.4])
 FINE_Q = np.array([1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.15])
-CHISQ_BINS = 8
+
+CHISQ_BINS = 8  # frequency bands in the chi-square check that a match looks like a real chirp
 MAX_TEMPLATE_S = 12.0  # stays inside the ~15 s of data before each event
+
+# Inputs from ml/data/fetch_all_events.py, and caches of this search's results.
+MANIFEST = "data/processed/real_signal/real_signal_manifest.csv"
+MATCHED_FILTER_CACHE = "data/processed/real_signal/matched_filter.csv"
+BACKGROUND_CACHE = "data/processed/real_signal/matched_filter_background.csv"
 
 
 def chirp_mass_grid(mc_min: float = 0.8, mc_max: float = 250.0, step_at_1msun: float = 6e-4,
@@ -65,10 +74,6 @@ def start_frequency(mc_s: float, f_low: float, max_duration_s: float = MAX_TEMPL
     """
     f_dur = (5 / 256 * mc_s ** (-5 / 3) / max_duration_s) ** (3 / 8) / np.pi
     return max(f_low, f_dur)
-
-MANIFEST = "data/processed/real_signal/real_signal_manifest.csv"
-MATCHED_FILTER_CACHE = "data/processed/real_signal/matched_filter.csv"
-BACKGROUND_CACHE = "data/processed/real_signal/matched_filter_background.csv"
 
 
 def taylorf2_phase(f: np.ndarray, mc_s: float, eta: float) -> np.ndarray:
@@ -197,10 +202,15 @@ def matched_filter_masses(
     rescans the neighboring grid points across the finer mass-ratio grid.
     """
     mf = _Filter(strain, dt, gps_start, event_gps, f_low, search_s)
-    best = max((mf.snr(mc, q), i, q) for i, mc in enumerate(MC_GRID) for q in STAGE1_Q)
-    i = best[1]
-    neighbors = MC_GRID[max(0, i - 4):i + 5]
-    snr, mc, q = max([(best[0], MC_GRID[i], best[2])] + [(mf.snr(m, qq), m, qq) for m in neighbors for qq in FINE_Q])
+
+    # Stage 1: (snr, grid index, mass ratio) of the best coarse match.
+    best_snr, best_i, best_q = max((mf.snr(mc, q), i, q) for i, mc in enumerate(MC_GRID) for q in STAGE1_Q)
+
+    # Stage 2: the 4 grid points either side, at every fine mass ratio.
+    neighbors = MC_GRID[max(0, best_i - 4):best_i + 5]
+    candidates = [(best_snr, MC_GRID[best_i], best_q)]
+    candidates += [(mf.snr(mc, q), mc, q) for mc in neighbors for q in FINE_Q]
+    snr, mc, q = max(candidates)
     return snr, float(mc), float(q)
 
 

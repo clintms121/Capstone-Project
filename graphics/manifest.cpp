@@ -1,3 +1,5 @@
+// Reads data/trajectories/index.csv: the list of mergers that have a 3D
+// simulation, with each one's masses and trajectory file.
 #include "manifest.h"
 #include <fstream>
 #include <sstream>

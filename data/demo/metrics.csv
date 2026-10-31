@@ -1,0 +1,14 @@
+key,value
+test_images,1559
+classes,22
+accuracy,0.9788325849903784
+macro_f1,0.9613097038876877
+real_recall,0.9846153846153847
+real_precision,0.8888888888888888
+noise_called_real,8
+noise_total,216
+mass_threshold_snr,6.415852570972124
+mass_events,178
+mass_measurable,76
+mass_median_error,0.022491534233168464
+mass_within_10pct,0.9078947368421053
